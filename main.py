@@ -20,3 +20,24 @@ def circle_area_from_radius(r):
     return pi * r ** 2
 
 
+def trapezoid_ares(a, b, h):
+    """
+
+    :param a: float/int: length of the first base
+    :param b: float/int: length of the second base
+    :param h: float/int: height of the trapezoid
+    :return: float/int: area of the trapezoid
+    """
+    return ((a + b) * h) / 2
+
+
+def line_length(x1, y1, x2, y2):
+    """
+
+    :param x1: float/int: startpoint x coordinate
+    :param y1: float/int: startpoint y coordinate
+    :param x2: float/int: endpoint x coordinate
+    :param y2: float/int: endpoint y coordinate
+    :return: float/int: length of the section
+    """
+    return ((x2 - x1)**2 + (y2 - y1)**2)**0.5
