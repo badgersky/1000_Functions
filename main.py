@@ -1,3 +1,6 @@
+from math import pi
+
+
 def rectangle_area(a, b):
     """
 
@@ -6,3 +9,14 @@ def rectangle_area(a, b):
     :return: float/int: area of rectangle
     """
     return a * b
+
+
+def circle_area_from_radius(r):
+    """
+
+    :param r: float/int: circle radius
+    :return: float: circle area
+    """
+    return pi * r ** 2
+
+
