@@ -100,3 +100,21 @@ def my_count(s, pattern):
         if char == pattern:
             result += 1
     return result
+
+
+def my_min(col):
+    """
+
+    :param col: list: list of integers/floats
+    :return: integer/float: the lowest number in collection
+    """
+    if col:
+        lowest = col[0]
+    else:
+        raise ValueError(f'argument is an empty collection: {col}')
+    for num in col:
+        if num < lowest:
+            lowest = num
+        else:
+            continue
+    return lowest
