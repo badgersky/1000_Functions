@@ -83,6 +83,20 @@ def my_title(s):
     for word in words:
         first = word[0]
         word = word.replace(first, '')
-        new_word = first.upper() + word
+        new_word = first.upper() + word.lower()
         new_words.append(new_word)
     return ' '.join(new_words)
+
+
+def my_count(s, pattern):
+    """
+
+    :param s: string/list: characters/list in which we are counting pattern
+    :param pattern: string/int/float: character we want to get number of in string
+    :return: int: number of patterns in string/list
+    """
+    result = 0
+    for char in s:
+        if char == pattern:
+            result += 1
+    return result
