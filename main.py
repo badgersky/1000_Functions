@@ -70,3 +70,19 @@ def my_sorted(col):
         new_col.append(col[col.index(min(col))])
         col.pop(col.index(min(col)))
     return new_col
+
+
+def my_title(s):
+    """
+
+    :param s: string: alphabetic characters (multiple words possible
+    :return: string: first letter-uppercase, the rest-lowercase (of every word)
+    """
+    words = s.split()
+    new_words = []
+    for word in words:
+        first = word[0]
+        word = word.replace(first, '')
+        new_word = first.upper() + word
+        new_words.append(new_word)
+    return ' '.join(new_words)
