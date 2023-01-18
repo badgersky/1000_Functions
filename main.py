@@ -41,3 +41,15 @@ def line_length(x1, y1, x2, y2):
     :return: float/int: length of the section
     """
     return ((x2 - x1)**2 + (y2 - y1)**2)**0.5
+
+
+def check_parentheses(s):
+    parentheses = ['()', '{}', '[]']
+    while '()' in s or '{}' in s or '[]' in s:
+        for par in parentheses:
+            s = s.replace(par, '')
+    if len(s) == 0:
+        return True
+    else:
+        return False
+
