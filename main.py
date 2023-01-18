@@ -44,6 +44,11 @@ def line_length(x1, y1, x2, y2):
 
 
 def check_parentheses(s):
+    """
+
+    :param s: string: parentheses
+    :return: bool: True if parentheses are in good order
+    """
     parentheses = ['()', '{}', '[]']
     while '()' in s or '{}' in s or '[]' in s:
         for par in parentheses:
@@ -53,3 +58,15 @@ def check_parentheses(s):
     else:
         return False
 
+
+def my_sorted(col):
+    """
+
+    :param col: list: list of integers, floats
+    :return: list: incrementing sorted input list
+    """
+    new_col = []
+    while col:
+        new_col.append(col[col.index(min(col))])
+        col.pop(col.index(min(col)))
+    return new_col
