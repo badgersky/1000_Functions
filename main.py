@@ -59,16 +59,19 @@ def check_parentheses(s):
         return False
 
 
-def my_sorted(col):
+def my_sorted(col, reverse=False):
     """
 
     :param col: list: list of integers, floats
+    :param reverse: bool: true-collection will be sorted with descending order, false-opposite
     :return: list: incrementing sorted input list
     """
     new_col = []
     while col:
         new_col.append(col[col.index(min(col))])
         col.pop(col.index(min(col)))
+    if reverse:
+        return new_col[::-1]
     return new_col
 
 
@@ -118,3 +121,34 @@ def my_min(col):
         else:
             continue
     return lowest
+
+
+def quadratic_equation(a, b, c):
+    """
+
+    :param a: int/float: parameter a in equation: ax^2+bx+c = 0
+    :param b: int/float: parameter b in equation: ax^2+bx+c = 0
+    :param c: int/float: parameter c in equation: ax^2+bx+c = 0
+    :return: int/float/tuple: values/value of x in ax^2+bx+c = 0
+    """
+    delta = get_delta(a, b, c)
+    if delta < 0:
+        return f'No solution for the equation'
+    elif delta == 0:
+        return (-b + delta**0.5) / (2 * a)
+    else:
+        return (-b + delta**0.5) / (2 * a), (-b - delta**0.5) / (2 * a)
+
+
+def get_delta(a, b, c):
+    """
+
+    :param a: int/float: parameter a in equation: ax^2+bx+c = 0
+    :param b: int/float: parameter b in equation: ax^2+bx+c = 0
+    :param c: int/float: parameter c in equation: ax^2+bx+c = 0
+    :return: int/float: value of delta for equation: ax^2+bx+c = 0
+    """
+    try:
+        return b**2 - 4 * a * c
+    except TypeError:
+        return f'Invalid parameters: {a, b, c}'
