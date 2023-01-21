@@ -145,20 +145,29 @@ def get_delta(a, b, c):
 
 
 def rock_paper_scissors():
+    while True:
+        choice_value = get_choice()
+        if not choice_value:
+            break
+        else:
+            pc_choice = randint(1, 3)
+            if pc_choice == 1 and choice_value == 2:
+                print('You win')
+            elif pc_choice == 2 and choice_value == 3:
+                print('You win')
+            elif pc_choice == 3 and choice_value == 1:
+                print('You win')
+            else:
+                print('Pc wins')
+
+
+def get_choice():
     choice_values = {'r': 1, 'rock': 1, 'p': 2, 'paper': 2, 's': 3, 'scissors': 3}
     valid_choices = ['r', 's', 'p', 'paper', 'rock', 'scissors']
-    p_choice = input('Enter your choice: [r/p/s/rock/paper/scissors]: ')
-    if p_choice.lower() not in valid_choices:
+    p_choice = input('Enter your choice: [r/p/s/rock/paper/scissors], type "q" to stop: ')
+    if p_choice.lower() == 'q':
+        return False
+    elif p_choice.lower() in valid_choices:
+        return choice_values[p_choice.lower()]
+    else:
         raise ValueError(f'Invalid choice: {p_choice}')
-    else:
-        choice_value = choice_values[p_choice]
-
-    pc_choice = randint(1, 3)
-    if pc_choice == 1 and choice_value == 2:
-        print('You win')
-    elif pc_choice == 2 and choice_value == 3:
-        print('You win')
-    elif pc_choice == 3 and choice_value == 1:
-        print('You win')
-    else:
-        print('Pc wins')
