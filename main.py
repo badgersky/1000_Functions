@@ -151,14 +151,7 @@ def rock_paper_scissors():
             break
         else:
             pc_choice = randint(1, 3)
-            if pc_choice == 1 and choice_value == 2:
-                print('You win')
-            elif pc_choice == 2 and choice_value == 3:
-                print('You win')
-            elif pc_choice == 3 and choice_value == 1:
-                print('You win')
-            else:
-                print('Pc wins')
+            check_win(pc_choice, choice_value)
 
 
 def get_choice():
@@ -171,3 +164,14 @@ def get_choice():
         return choice_values[p_choice.lower()]
     else:
         raise ValueError(f'Invalid choice: {p_choice}')
+
+
+def check_win(pc_choice, p_choice):
+    if pc_choice == 1 and p_choice == 2:
+        print('You win')
+    elif pc_choice == 2 and p_choice == 3:
+        print('You win')
+    elif pc_choice == 3 and p_choice == 1:
+        print('You win')
+    else:
+        print('Pc wins')
