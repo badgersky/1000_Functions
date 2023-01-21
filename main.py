@@ -1,9 +1,9 @@
 from math import pi
+from random import randint
 
 
 def rectangle_area(a, b):
     """
-
     :param a: int/float: length of one side
     :param b: int/float: length of other side
     :return: float/int: area of rectangle
@@ -13,7 +13,6 @@ def rectangle_area(a, b):
 
 def circle_area_from_radius(r):
     """
-
     :param r: float/int: circle radius
     :return: float: circle area
     """
@@ -22,7 +21,6 @@ def circle_area_from_radius(r):
 
 def trapezoid_ares(a, b, h):
     """
-
     :param a: float/int: length of the first base
     :param b: float/int: length of the second base
     :param h: float/int: height of the trapezoid
@@ -33,7 +31,6 @@ def trapezoid_ares(a, b, h):
 
 def line_length(x1, y1, x2, y2):
     """
-
     :param x1: float/int: startpoint x coordinate
     :param y1: float/int: startpoint y coordinate
     :param x2: float/int: endpoint x coordinate
@@ -45,7 +42,6 @@ def line_length(x1, y1, x2, y2):
 
 def check_parentheses(s):
     """
-
     :param s: string: parentheses
     :return: bool: True if parentheses are in good order
     """
@@ -61,7 +57,6 @@ def check_parentheses(s):
 
 def my_sorted(col, reverse=False):
     """
-
     :param col: list: list of integers, floats
     :param reverse: bool: true-collection will be sorted with descending order, false-opposite
     :return: list: incrementing sorted input list
@@ -77,7 +72,6 @@ def my_sorted(col, reverse=False):
 
 def my_title(s):
     """
-
     :param s: string: alphabetic characters (multiple words possible
     :return: string: first letter-uppercase, the rest-lowercase (of every word)
     """
@@ -93,7 +87,6 @@ def my_title(s):
 
 def my_count(s, pattern):
     """
-
     :param s: string/list: characters/list in which we are counting pattern
     :param pattern: string/int/float: character we want to get number of in string
     :return: int: number of patterns in string/list
@@ -107,7 +100,6 @@ def my_count(s, pattern):
 
 def my_min(col):
     """
-
     :param col: list: list of integers/floats
     :return: integer/float: the lowest number in collection
     """
@@ -125,7 +117,6 @@ def my_min(col):
 
 def quadratic_equation(a, b, c):
     """
-
     :param a: int/float: parameter a in equation: ax^2+bx+c = 0
     :param b: int/float: parameter b in equation: ax^2+bx+c = 0
     :param c: int/float: parameter c in equation: ax^2+bx+c = 0
@@ -142,7 +133,6 @@ def quadratic_equation(a, b, c):
 
 def get_delta(a, b, c):
     """
-
     :param a: int/float: parameter a in equation: ax^2+bx+c = 0
     :param b: int/float: parameter b in equation: ax^2+bx+c = 0
     :param c: int/float: parameter c in equation: ax^2+bx+c = 0
@@ -152,3 +142,23 @@ def get_delta(a, b, c):
         return b**2 - 4 * a * c
     except TypeError:
         return f'Invalid parameters: {a, b, c}'
+
+
+def rock_paper_scissors():
+    choice_values = {'r': 1, 'rock': 1, 'p': 2, 'paper': 2, 's': 3, 'scissors': 3}
+    valid_choices = ['r', 's', 'p', 'paper', 'rock', 'scissors']
+    p_choice = input('Enter your choice: [r/p/s/rock/paper/scissors]: ')
+    if p_choice.lower() not in valid_choices:
+        raise ValueError(f'Invalid choice: {p_choice}')
+    else:
+        choice_value = choice_values[p_choice]
+
+    pc_choice = randint(1, 3)
+    if pc_choice == 1 and choice_value == 2:
+        print('You win')
+    elif pc_choice == 2 and choice_value == 3:
+        print('You win')
+    elif pc_choice == 3 and choice_value == 1:
+        print('You win')
+    else:
+        print('Pc wins')
