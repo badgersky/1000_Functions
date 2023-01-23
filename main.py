@@ -185,3 +185,15 @@ def get_percent_of_value(number, percent):
     :return: int/float: percent of number - parameter
     """
     return number * (percent / 100)
+
+
+def my_sum(numbers):
+    """
+
+    :param numbers: list/tuple: collection of int/float
+    :return: int/float: sum of numbers in collection
+    """
+    result = 0
+    for num in numbers:
+        result += num
+    return result
