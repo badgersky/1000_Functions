@@ -175,3 +175,13 @@ def check_win(pc_choice, p_choice):
         print('You win')
     else:
         print('Pc wins')
+
+
+def get_percent_of_value(number, percent):
+    """
+
+    :param number: int/float: number from which percentage will be calculated
+    :param percent: int/float: percent value
+    :return: int/float: percent of number - parameter
+    """
+    return number * (percent / 100)
