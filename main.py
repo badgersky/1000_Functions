@@ -197,3 +197,23 @@ def my_sum(numbers):
     for num in numbers:
         result += num
     return result
+
+
+def factorial(num):
+    """
+
+    :param num: int: will be used in calculating factorial
+    :return: int: factorial of num
+    """
+    if type(num) not in [int, float]:
+        raise TypeError(f'Invalid input: {num}')
+    if num < 0:
+        raise ValueError(f'Invalid input {num}')
+    if num == 0:
+        return 1
+    else:
+        result = 1
+        while num != 1:
+            result *= num
+            num -= 1
+        return result
