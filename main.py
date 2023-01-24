@@ -220,6 +220,10 @@ def factorial(num):
 
 
 def simple_calculator():
+    """
+
+    :return: int: calculated result
+    """
     problem = input(f'Enter your problem [number | - | + | / | * | number]: ')
     problem = problem.split()
     operator = problem[1]
@@ -238,4 +242,14 @@ def simple_calculator():
             return num1 / num2
         except ZeroDivisionError:
             return f'You cannot divide by 0'
-        
+
+
+def check_palindrome(s):
+    """
+
+    :param s: str: string which will be checked
+    :return: bool: true - if str is palindrome
+    """
+    if s == s[::-1]:
+        return True
+    return False
