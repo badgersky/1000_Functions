@@ -217,3 +217,25 @@ def factorial(num):
             result *= num
             num -= 1
         return result
+
+
+def simple_calculator():
+    problem = input(f'Enter your problem [number | - | + | / | * | number]: ')
+    problem = problem.split()
+    operator = problem[1]
+    try:
+        num1, num2 = int(problem[0]), int(problem[2])
+    except ValueError:
+        return f'Invalid input'
+    if operator == '+':
+        return num1 + num2
+    if operator == '-':
+        return num1 - num2
+    if operator == '*':
+        return num1 * num2
+    if operator == '/':
+        try:
+            return num1 / num2
+        except ZeroDivisionError:
+            return f'You cannot divide by 0'
+        
