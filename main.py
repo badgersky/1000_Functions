@@ -253,3 +253,17 @@ def check_palindrome(s):
     if s == s[::-1]:
         return True
     return False
+
+
+def count_vowels(s):
+    """
+
+    :param s: str: string in which function will count vowels
+    :return: int: number of vowels
+    """
+    vowels = 'e y u i o a'.split()
+    counter = 0
+    for char in s:
+        if char in vowels:
+            counter += 1
+    return counter
