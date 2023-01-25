@@ -280,3 +280,33 @@ def dice_roll(num_dices, num_sides):
         raise ValueError('Invalid input')
     result = [randint(1, num_sides) for _ in range(num_dices)]
     return result
+
+
+def tic_tac_toe():
+    board = [[None for _ in range(3)] for _ in range(3)]
+    for i in range(3):
+        print(board[i])
+
+    turn = 1
+    while turn <= 9:
+        if turn % 2 != 0:
+            cords = input('Enter coordinates where do you want to type X: ').split()
+            x, y = list(map(int, cords))
+            if board[x][y] is None:
+                board[x][y] = 'X'
+            else:
+                print('you lose your turn!')
+        if turn % 2 == 0:
+            cords = input('Enter coordinates where do you want to type O: ').split()
+            x, y = list(map(int, cords))
+            if board[x][y] is None:
+                board[x][y] = 'O'
+            else:
+                print('you lose your turn')
+
+        for i in range(3):
+            print(board[i])
+        turn += 1
+
+
+tic_tac_toe()
