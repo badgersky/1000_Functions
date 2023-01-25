@@ -267,3 +267,16 @@ def count_vowels(s):
         if char in vowels:
             counter += 1
     return counter
+
+
+def dice_roll(num_dices, num_sides):
+    """
+
+    :param num_dices: int: number of dices
+    :param num_sides: int: number of sides
+    :return: list: result of the roll
+    """
+    if num_dices < 0 or num_sides < 0:
+        raise ValueError('Invalid input')
+    result = [randint(1, num_sides) for _ in range(num_dices)]
+    return result
