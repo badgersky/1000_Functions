@@ -367,6 +367,17 @@ def smallest_biggest_dif(collection):
     return biggest - smallest
 
 
+def bmi_calculator(weight, height):
+    """
 
+    :param weight: int/float: weight in kilograms
+    :param height: int?float: height in meters or centimeters
+    :return:
+    """
+    if height > 10:
+        height /= 100
 
-
+    bmi = weight / height**2
+    if 18.5 <= bmi <= 22.9:
+        return f'(Your bmi is perfect: {bmi}'
+    return bmi
