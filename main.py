@@ -287,6 +287,10 @@ def tic_tac_toe():
     for i in range(3):
         print(board[i])
 
+    insert_x_o(board)
+
+
+def insert_x_o(board):
     turn = 1
     while turn <= 9:
         if turn % 2 != 0:
@@ -306,7 +310,36 @@ def tic_tac_toe():
 
         for i in range(3):
             print(board[i])
+
+        is_win = check_if_win(board)
+        if True in is_win:
+            print(f'player {is_win[0]} has won!')
+            break
         turn += 1
 
 
-tic_tac_toe()
+def check_if_win(board):
+    for row in board:
+        if row.count('X') == 3:
+            return 'X', True
+        elif row.count('O') == 3:
+            return 'O', True
+
+    for row in range(3):
+        result = [board[row][i] for i in range(3)]
+        if result.count('X') == 3:
+            return 'X', True
+        elif result.count('O') == 3:
+            return 'O', True
+
+    result = [board[i][i] for i in range(3)]
+    if result.count('X') == 3:
+        return 'X', True
+    elif result.count('O') == 3:
+        return 'O', True
+
+    if board[0][2] == board[1][1] == board[2][0] == 'X':
+        return 'X', True
+    elif board[0][2] == board[1][1] == board[2][0] == 'O':
+        return 'O', True
+    return 'draw', False
