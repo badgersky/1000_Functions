@@ -381,3 +381,15 @@ def bmi_calculator(weight, height):
     if 18.5 <= bmi <= 22.9:
         return f'(Your bmi is perfect: {bmi}'
     return bmi
+
+
+def cost_of_floor(cost_per_m2, length, width):
+    """
+
+    :param cost_per_m2: int/float: cost per square meter of floor
+    :param length: int/float: length of the floor
+    :param width: int/float: width of the floor
+    :return:
+    """
+    area = length * width
+    return area / cost_per_m2
