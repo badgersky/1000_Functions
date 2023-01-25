@@ -343,3 +343,19 @@ def check_if_win(board):
     elif board[0][2] == board[1][1] == board[2][0] == 'O':
         return 'O', True
     return 'draw', False
+
+
+def sphere_volume(radius):
+    """
+
+    :param radius: int/float: sphere radius
+    :return: int/float: sphere volume
+    """
+    if radius < 0:
+        raise ValueError(f'Invalid radius: {radius}')
+    return (4 / 3) * pi * radius ** 3
+
+
+
+
+
