@@ -393,3 +393,16 @@ def cost_of_floor(cost_per_m2, length, width):
     """
     area = length * width
     return area / cost_per_m2
+
+
+def how_many_spins(r, road):
+    """
+
+    :param r: int/float: radius of wheel in meters
+    :param road: int/float: length of the road in kilometers
+    :return: int/float: how many times the wheel will spin
+    """
+    wheel_circuit = 2 * pi * r
+    road_meters = road * 1000
+    return road_meters / wheel_circuit
+
