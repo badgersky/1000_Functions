@@ -356,6 +356,17 @@ def sphere_volume(radius):
     return (4 / 3) * pi * radius ** 3
 
 
+def smallest_biggest_dif(collection):
+    """
+
+    :param collection: list/tuple: collection of numbers
+    :return: int/float: difference between biggest and smallest number in collection
+    """
+    smallest = min(collection)
+    biggest = max(collection)
+    return biggest - smallest
+
+
 
 
 
