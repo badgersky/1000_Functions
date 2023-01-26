@@ -449,3 +449,14 @@ def how_long_for_the_light(planet):
                f'and {int(time_seconds)}s for the light to get to {planet.title()}.'
     else:
         return f'It takes {int(time_minutes)}min and {int(time_seconds)}s for the light to get to {planet.title()}'
+
+
+def pythagorean_theorem(a, b):
+    """
+
+    :param a: int/float: first side next to the right angle in right triangle
+    :param b: int/float: second side next to the right angle in right triangle
+    :return: int/float: side opposite to the right triangle
+    """
+    c = (a**2 + b**2)**0.5
+    return c
