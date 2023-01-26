@@ -406,3 +406,12 @@ def how_many_spins(r, road):
     road_meters = road * 1000
     return road_meters / wheel_circuit
 
+
+def get_water_pressure(height):
+    """
+
+    :param height: int/float: height of water column between object and surface
+    :return: int/float: pressure in Pascals
+    """
+    density = 997
+    return density * height * 9.81
