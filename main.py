@@ -415,3 +415,37 @@ def get_water_pressure(height):
     """
     density = 997
     return density * height * 9.81
+
+
+def how_long_for_the_light(planet):
+    """
+    function calculates time that sunlight need to get to different planets in Solar System
+
+    :param planet:
+    :return:
+    """
+    distances_from_sun = {
+        'mercury': 57_909_170,
+        'venus': 108_208_926,
+        'earth': 149_597_887,
+        'mars': 227_936_637,
+        'jupiter': 778_412_027,
+        'saturn': 1_426_725_413,
+        'uranus': 2_870_972_220,
+        'neptune': 4_498_252_900,
+    }
+
+    lightspeed_kms = 299_792.458
+    distance = distances_from_sun[planet.lower()]
+    time_seconds = distance // lightspeed_kms
+
+    time_minutes = time_seconds // 60
+    time_seconds = time_seconds % 60
+    if time_minutes > 60:
+        time_hours = time_minutes // 60
+        time_minutes = time_minutes % 60
+        return f'It takes {int(time_hours)}h, ' \
+               f'{int(time_minutes)}min ' \
+               f'and {int(time_seconds)}s for the light to get to {planet.title()}.'
+    else:
+        return f'It takes {int(time_minutes)}min and {int(time_seconds)}s for the light to get to {planet.title()}'
