@@ -470,3 +470,21 @@ def triangle_are(a, h):
     :return: int/float: triangle are
     """
     return (a * h) / h
+
+
+def my_max(col):
+    """
+
+    :param col: list/tuple: collection of numbers
+    :return: int/float: the biggest number in collection
+    """
+    if col:
+        biggest = col[0]
+    else:
+        raise ValueError('Argument is an empty collection')
+    for num in col:
+        if num > biggest:
+            biggest = num
+        else:
+            continue
+    return biggest
