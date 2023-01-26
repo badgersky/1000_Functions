@@ -460,3 +460,13 @@ def pythagorean_theorem(a, b):
     """
     c = (a**2 + b**2)**0.5
     return c
+
+
+def triangle_are(a, h):
+    """
+
+    :param a: int/float: length of the base
+    :param h: int/float: length of the height
+    :return: int/float: triangle are
+    """
+    return (a * h) / h
