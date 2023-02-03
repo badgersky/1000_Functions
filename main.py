@@ -488,3 +488,14 @@ def my_max(col):
         else:
             continue
     return biggest
+
+
+def fahrenheit_to_celsius(temp_f):
+    """
+
+    :param temp_f: int/float: temperature in fahrenheit
+    :return: int/float: temperature in celsius
+    """
+    return (temp_f - 32) * 0.5556
+
+
