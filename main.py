@@ -499,3 +499,15 @@ def fahrenheit_to_celsius(temp_f):
     return (temp_f - 32) * 0.5556
 
 
+def guess_number():
+    print('Try to guess number between 0 and 50 in 5 tries.')
+    secret_num = randint(0, 50)
+    counter = 0
+    while counter < 5:
+        guess = int(input('Enter your guess: '))
+        if guess == secret_num:
+            print('You win!')
+            break
+        else:
+            counter += 1
+    print('You lose')
