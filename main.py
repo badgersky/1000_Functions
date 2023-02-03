@@ -1,4 +1,4 @@
-from math import pi
+from math import pi, atan
 from random import randint
 
 
@@ -410,7 +410,7 @@ def how_many_spins(r, road):
 def get_water_pressure(height):
     """
 
-    :param height: int/float: height of water column between object and surface
+    :param height: int/float: height of water column between object and surface in meters
     :return: int/float: pressure in Pascals
     """
     density = 997
@@ -511,3 +511,36 @@ def guess_number():
         else:
             counter += 1
     print('You lose')
+
+
+def rad_to_deg(rad):
+    """
+
+    :param rad: int/float: value of angle in radians
+    :return: int/float: value of angle in degree
+    """
+    return rad * (180 / pi)
+
+
+def calculate_azimuth(x1, y1, x2, y2):
+    """
+
+    :param x1: int/float: x coordinate of first point
+    :param y1: int/float: y coordinate of first point
+    :param x2: int/float: x coordinate of second point
+    :param y2: int/float: y coordinate of second point
+    :return: int/float: section azimuth
+    """
+    dx = x2 - x1
+    dy = y2 - y1
+    print(dx, dy)
+    q_angle_rad = atan(dy / dx)
+    q_angle_deg = rad_to_deg(q_angle_rad)
+    if dx > 0 and dy > 0:
+        return q_angle_deg
+    elif dx > 0 > dy:
+        return 180 - q_angle_deg
+    elif dx < 0 and dy < 0:
+        return 180 + q_angle_deg
+    else:
+        return 360 - q_angle_deg
