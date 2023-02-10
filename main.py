@@ -544,3 +544,14 @@ def calculate_azimuth(x1, y1, x2, y2):
         return 180 + q_angle_deg
     else:
         return 360 - q_angle_deg
+
+
+def generate_dividers(number):
+    """
+
+    :param number: int: number that you want to find dividers of
+    :return: list: list of dividers
+    """
+    for i in range(1, number + 1):
+        if number % i == 0:
+            yield i
