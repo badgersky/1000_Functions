@@ -1,3 +1,4 @@
+import random
 from math import pi, atan
 from random import randint
 
@@ -574,4 +575,23 @@ def my_range(start=0, stop=None, step=1):
     while start < stop:
         yield start
         start += step
-        
+
+
+def shuffle_cards():
+    """
+
+    :return: list: shuffled deck of cards
+    """
+    suits = ('clubs', 'diamonds', 'hearts', 'spades')
+    face_cards = ('king', 'queen', 'jack', 'ace')
+
+    deck = []
+    for suit in suits:
+        for i in range(2, 11):
+            deck.append((i, suit))
+
+        for face_card in face_cards:
+            deck.append((face_card, suit))
+
+    random.shuffle(deck)
+    return deck
