@@ -533,7 +533,6 @@ def calculate_azimuth(x1, y1, x2, y2):
     """
     dx = x2 - x1
     dy = y2 - y1
-    print(dx, dy)
     q_angle_rad = atan(dy / dx)
     q_angle_deg = rad_to_deg(q_angle_rad)
     if dx > 0 and dy > 0:
@@ -555,3 +554,24 @@ def generate_dividers(number):
     for i in range(1, number + 1):
         if number % i == 0:
             yield i
+
+
+def my_range(start=0, stop=None, step=1):
+    """
+
+    :param start: int: number you want to start generating from default=0
+    :param stop: int: range of generator
+    :param step: int: step by which numbers will be incremented
+    :return: generator object
+    """
+    if stop is None:
+        stop=start
+        start=0
+
+    if not isinstance(start, int) or not isinstance(stop, int) or not isinstance(step, int):
+        raise ValueError(f'my_range function accepts only integers')
+
+    while start < stop:
+        yield start
+        start += step
+        
