@@ -614,4 +614,17 @@ def factorial2(num):
         return num * factorial2(num - 1)
     
 
-print(factorial2(5))
+def power_number(num, power=2):
+    """
+    
+    :param num: int: number you want to calculate power of
+    :param power: int: exponent
+    :return: int: factorial of num
+    """
+    if power == 0:
+        return 1
+    elif power == 1:
+        return num
+    else:
+        return num * power_number(num, power - 1)
+    
