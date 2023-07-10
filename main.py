@@ -595,3 +595,23 @@ def shuffle_cards():
 
     random.shuffle(deck)
     return deck
+
+
+def factorial2(num):
+    """
+
+    :param num: int: will be used in calculating factorial
+    :return: int: factorial of num
+    """
+    if not isinstance(num, int):
+        raise TypeError(f'Invalid input: {num}')
+    if num < 0:
+        raise ValueError(f'Invalid input {num}')
+
+    if num <= 1:
+        return 1
+    else:
+        return num * factorial2(num - 1)
+    
+
+print(factorial2(5))
