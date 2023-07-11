@@ -630,6 +630,12 @@ def power_number(num, power=2):
     
 
 def tower_of_hanoi(num=64):
+    """
+    
+    :param num: int: number of discs in hanoi tower puzzle
+    :return: int, 3xlist: int - number of steps until hanoi tower solved, each list represent single rod in puzzle
+    """
+
     # setting variables
     A = list(range(num, 0, -1))
     B = []
@@ -721,3 +727,22 @@ def check_solved(num, C):
     if C == list(range(num, 0, -1)):
         return True
     return False
+
+
+def get_coins_for_change():
+    """
+
+    Function calculates which coins sum up to randomly generated change
+    """
+    available_coins = [0.5, 0.2, 0.1, 0.05, 0.02, 0.01]
+    change = round(random.random(), 2)
+    coins = []
+
+    while round(sum(coins), 2) != change:
+        biggest_coin = max(available_coins)
+        if round(sum(coins) + biggest_coin, 2) > change:
+            available_coins.remove(biggest_coin)
+        else:
+            coins.append(biggest_coin)
+    
+    return f'Coin for change {change}: ' + ', '.join(str(num) for num in coins)
