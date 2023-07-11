@@ -628,3 +628,96 @@ def power_number(num, power=2):
     else:
         return num * power_number(num, power - 1)
     
+
+def tower_of_hanoi(num=64):
+    # setting variables
+    A = list(range(num, 0, -1))
+    B = []
+    C = []
+    counter = 0
+
+    if num % 2 == 0:
+        while True:
+            counter, B, A = move_AB(counter, B, A)
+            if check_solved(num, C):
+                return counter, C, B, A
+            counter, C, A = move_AC(counter, C, A)
+            if check_solved(num, C):
+                return counter, C, B, A
+            counter, C, B = move_BC(counter, C, B)
+            if check_solved(num, C):
+                return counter, C, B, A
+    else:
+        while True: 
+            counter, C, A = move_AC(counter, C, A)
+            if check_solved(num, C):
+                return counter, C, B, A
+            counter, B, A = move_AB(counter, B, A)
+            if check_solved(num, C):
+                return counter, C, B, A
+            counter, C, B = move_BC(counter, C, B)
+            if check_solved(num, C):
+                return counter, C, B, A
+
+
+def move_AB(counter, B, A):
+    # legal move between A and B
+    if A and not B:
+        disc = A.pop()
+        B.append(disc)
+    elif not A and B:
+        disc = B.pop()
+        A.append(disc)
+    elif A[-1] > B[-1]:
+        disc = B.pop()
+        A.append(disc)
+    elif B[-1] > A[-1]:
+        disc = A.pop()            
+        B.append(disc)
+    counter += 1
+
+    return counter, B, A
+
+
+def move_AC(counter, C, A):
+    # legal move between A and C
+    if A and not C:
+        disc = A.pop()
+        C.append(disc)
+    elif not A and C:
+        disc = C.pop()
+        A.append(disc)
+    elif A[-1] > C[-1]:
+        disc = C.pop()
+        A.append(disc)
+    elif C[-1] > A[-1]:
+        disc = A.pop()
+        C.append(disc)
+    counter += 1
+
+    return counter, C, A
+
+
+def move_BC(counter, C, B):
+    # legal move between B and C
+    if B and not C:
+        disc = B.pop()
+        C.append(disc)
+    elif C and not B:
+        disc = C.pop()
+        B.append(disc)
+    elif C[-1] > B[-1]:
+        disc = B.pop()
+        C.append(disc)  
+    elif B[-1] > C[-1]:
+        disc = C.pop()
+        B.append(disc)
+    counter += 1
+
+    return counter, C, B
+
+
+def check_solved(num, C):
+    if C == list(range(num, 0, -1)):
+        return True
+    return False
