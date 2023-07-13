@@ -836,16 +836,43 @@ def encode_message(message):
     """
     rules = encoding_rules()
 
-    message = clear_text(message)
     message = message.lower()
-
 
     encoded_message = ''
     for char in message:
-        encoded_message += rules[char]
+        encoded_message += rules.get(char, char)
 
     return encoded_message
 
 
-print(encode_message('aaa'))
-print(encode_message('siema'))
+def decoding_rules():
+    rules = {char: ascii_lowercase[i] for i, char in enumerate(ascii_lowercase[::-1])}
+    return rules
+
+
+def decode_message(message):
+    """
+    Function dencodes message according to dencoding rules
+
+    :param message: str: message to dencode
+    :return: str: dencoded message
+    """   
+    rules = decoding_rules()
+
+    message = message.lower()
+
+    decoded_message = ''
+    for char in message:
+        decoded_message += rules.get(char, char)
+
+    return decoded_message
+
+message = 'siema siema o tej porze każdy wypić może, jakby nie było jest bardzo miło'
+
+message_e = encode_message(message)
+print(message_e)
+
+message_d = decode_message(message_e)
+print(message_d)
+
+print(message==message_d)
