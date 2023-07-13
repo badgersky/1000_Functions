@@ -789,4 +789,24 @@ def count_word_occurences1(word, text):
     return text_arr.count(word)
 
 
-print(count_word_occurences1('wE', 'We and our partners store and/or access information on a device, such as cookies and process personal data, such as unique identifiers and standard information sent by a device for personalised ads and content, ad and content measurement, and audience insights, as well as to develop and improve products. With your permission we and our partners may use precise geolocation data and identification through device scanning. You may click to consent to our and our partners’ processing as described above. Alternatively you may click to refuse to consent or access more detailed information and change your preferences before consenting. Please note that some processing of your personal data may not require your consent, but you have a right to object to such processing. Your preferences will apply to this website only. You can change your preferences at any time by returning to this site or visit our privacy policy.'))
+def count_word_occurences2(word, text):
+    """
+    Function counts how many occurences of word are in the text
+
+    :param word: str: word which will be counted
+    :param text: str: text to count the word in
+    :return: int: number of occurences of the word in the text
+    """
+
+    text = clear_text(text)
+    text = text.lower()
+    word = word.lower()
+    counter = 0
+
+    for s in text.split():
+        if word == s:
+            counter += 1
+    return counter
+
+
+print(count_word_occurences2('WE', 'We and our partners store and/or access information on a device, such as cookies and process personal data, such as unique identifiers and standard information sent by a device for personalised ads and content, ad and content measurement, and audience insights, as well as to develop and improve products. With your permission we and our partners may use precise geolocation data and identification through device scanning. You may click to consent to our and our partners’ processing as described above. Alternatively you may click to refuse to consent or access more detailed information and change your preferences before consenting. Please note that some processing of your personal data may not require your consent, but you have a right to object to such processing. Your preferences will apply to this website only. You can change your preferences at any time by returning to this site or visit our privacy policy.'))
