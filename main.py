@@ -746,3 +746,14 @@ def get_coins_for_change():
             coins.append(biggest_coin)
     
     return f'Coin for change {change}: ' + ', '.join(str(num) for num in coins)
+
+
+def sphere_volume(r):
+    """
+    
+    :param r: radius of sphere
+    :return: volume of sphere with radius r
+    """
+    return (4 / 3) * pi * r**3
+    
+print(sphere_volume(r=7))
