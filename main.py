@@ -756,4 +756,18 @@ def sphere_volume(r):
     """
     return (4 / 3) * pi * r**3
     
-print(sphere_volume(r=7))
+
+def clear_text(text):
+    """
+    Function clears text of non alphabetic characters leaves spaces
+
+    :param text: str: text to clear
+    :return: str: cleared text
+    """
+
+    new_text = ''
+    for char in text:
+        if char.isalpha() or char == ' ':
+            new_text += char
+
+    return new_text
