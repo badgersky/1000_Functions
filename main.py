@@ -867,12 +867,23 @@ def decode_message(message):
 
     return decoded_message
 
-message = 'siema siema o tej porze każdy wypić może, jakby nie było jest bardzo miło'
 
-message_e = encode_message(message)
-print(message_e)
+def count_prymitive_elements(arr):
+    """
+    Function returns number of primitive elements
 
-message_d = decode_message(message_e)
-print(message_d)
+    :param arr: list: list to count primitive elements 
+    :return: int: number of primitive elements
+    """
 
-print(message==message_d)
+    counter = 0
+    for element in arr:
+        if not isinstance(element, list):
+            counter += 1
+        else:
+            counter += count_prymitive_elements(element)
+
+    return counter
+
+
+print(count_prymitive_elements([1, 2, 3, [1, 2, [1, 2, 3, 4]], [1, 2, 3, 4, [1, 2]]]))
