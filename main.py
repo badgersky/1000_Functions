@@ -901,4 +901,14 @@ def get_median(arr):
         return arr[len(arr) // 2]
 
 
-print(get_median([6, 5, 4, 3, 2, 1]))
+def arithmetic_average(arr):
+    """
+    Function calculates arithmetic average
+    
+    :param arr: list: list of numbers
+    :return: int/float: calculated average
+    """
+    return sum(arr) / len(arr)
+
+
+print(arithmetic_average([1, 2, 3, 4, 5]))
