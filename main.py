@@ -893,6 +893,7 @@ def get_median(arr):
     :param arr: list: list of numbers 
     :return: int/float: median value
     """
+
     arr.sort()
     if not len(arr) % 2:
         center_values = arr[len(arr) // 2 - 1: len(arr) // 2 + 1]
@@ -908,6 +909,7 @@ def arithmetic_average(arr):
     :param arr: list: list of numbers
     :return: int/float: calculated average
     """
+
     return sum(arr) / len(arr)
 
 
@@ -918,6 +920,7 @@ def geometric_average(arr):
     :param arr: list: list of numbers
     :return: float: calculated average
     """
+
     product = 1
     for num in arr:
         product *= num
@@ -925,4 +928,14 @@ def geometric_average(arr):
     return product**(1/len(arr))
 
 
-print(geometric_average([1, 2, 3, 4]))
+def harmonic_average(arr):
+    """
+    Function calcualtes harmonic average
+
+    :param arr: list: list of numbers
+    :return: float: calculated average
+    """
+
+    return len(arr) / sum([1/num for num in arr])
+
+print(harmonic_average([1, 2, 3, 4]))
