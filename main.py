@@ -991,14 +991,6 @@ def travelling_salesman_problem():
         curr_city = optimal_choice[0]  # setting current city
         route.append(curr_city)  # appending current city to route
 
-    # finding end route to close the cicle
-    start_city = route[0]
-    last_city = route[-1]
-    for branch in graph:
-        if start_city in branch and last_city in branch:
-            length += branch[-1]
-            route.append(start_city)
-
     return f'Route has length: {length} and goes like this: ' + ' - '.join(route)
 
 print(travelling_salesman_problem())
