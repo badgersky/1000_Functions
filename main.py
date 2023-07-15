@@ -886,4 +886,19 @@ def count_prymitive_elements(arr):
     return counter
 
 
-print(count_prymitive_elements([1, 2, 3, [1, 2, [1, 2, 3, 4]], [1, 2, 3, 4, [1, 2]]]))
+def get_median(arr):
+    """
+    Function returns median value of array
+    
+    :param arr: list: list of numbers 
+    :return: int/float: median value
+    """
+    arr.sort()
+    if not len(arr) % 2:
+        center_values = arr[len(arr) // 2 - 1: len(arr) // 2 + 1]
+        return sum(center_values) / 2
+    else:
+        return arr[len(arr) // 2]
+
+
+print(get_median([6, 5, 4, 3, 2, 1]))
