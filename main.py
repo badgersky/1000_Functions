@@ -911,4 +911,18 @@ def arithmetic_average(arr):
     return sum(arr) / len(arr)
 
 
-print(arithmetic_average([1, 2, 3, 4, 5]))
+def geometric_average(arr):
+    """
+    Function calculates geometric average
+    
+    :param arr: list: list of numbers
+    :return: float: calculated average
+    """
+    product = 1
+    for num in arr:
+        product *= num
+    
+    return product**(1/len(arr))
+
+
+print(geometric_average([1, 2, 3, 4]))
