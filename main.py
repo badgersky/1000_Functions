@@ -952,4 +952,53 @@ def weighted_average(arr):
     return number_weight_prod / weights_sum
 
 
-print(weighted_average([(1, 2), (2, 2), (3, 2), (4, 1), (5, 1.5), (6, 2)]))
+def travelling_salesman_problem():
+    """
+    Function will find solution for travelling salesman problem
+
+    :return: str: length of the route and cities listed from start to finish
+    """
+
+    cities = ['warszawa', 'gdańsk', 'kraków', 'wrocław', 'poznań']
+    graph = [
+        (cities[0], cities[1], 341),
+        (cities[0], cities[2], 299),
+        (cities[0], cities[3], 341),
+        (cities[0], cities[4], 304),
+        (cities[1], cities[2], 584),
+        (cities[1], cities[3], 486),
+        (cities[1], cities[4], 304),
+        (cities[2], cities[3], 304),
+        (cities[2], cities[4], 403),
+        (cities[3], cities[4], 280),
+    ]
+
+    route = [cities[0]]
+    curr_city = cities[0]
+    visited = []
+    length = 0
+    while len(route) != len(cities):
+        curr_nodes = []
+        for branch in graph:
+            if curr_city in branch and branch not in visited:
+                curr_nodes.append(branch)
+        
+        # chosing the most optimal choice - branch has the lowest weight
+        optimal_choice = list(min(curr_nodes, key=lambda node: node[2]))
+        length += optimal_choice[2]  # incrementing lenght of route
+        optimal_choice.remove(curr_city)  # removing current city from choice
+        visited.extend(curr_nodes)  # extending visited list by used graph branches
+        curr_city = optimal_choice[0]  # setting current city
+        route.append(curr_city)  # appending current city to route
+
+    # finding end route to close the cicle
+    start_city = route[0]
+    last_city = route[-1]
+    for branch in graph:
+        if start_city in branch and last_city in branch:
+            length += branch[-1]
+            route.append(start_city)
+
+    return f'Route has length: {length} and goes like this: ' + ' - '.join(route)
+
+print(travelling_salesman_problem())
