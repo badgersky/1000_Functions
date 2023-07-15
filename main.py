@@ -992,5 +992,3 @@ def travelling_salesman_problem():
         route.append(curr_city)  # appending current city to route
 
     return f'Route has length: {length} and goes like this: ' + ' - '.join(route)
-
-print(travelling_salesman_problem())
