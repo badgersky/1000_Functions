@@ -938,4 +938,18 @@ def harmonic_average(arr):
 
     return len(arr) / sum([1/num for num in arr])
 
-print(harmonic_average([1, 2, 3, 4]))
+
+def weighted_average(arr):
+    """
+    Function calculates weighted average
+
+    :param arr: list: list of tuples made of number and weight
+    :return: float: calculated average
+    """
+
+    number_weight_prod = sum([tup[0] * tup[1] for tup in arr])
+    weights_sum = sum(tup[1] for tup in arr)
+    return number_weight_prod / weights_sum
+
+
+print(weighted_average([(1, 2), (2, 2), (3, 2), (4, 1), (5, 1.5), (6, 2)]))
