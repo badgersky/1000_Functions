@@ -1004,13 +1004,8 @@ def create_matrix(row, column):
     """
 
     arr = [[0 for _ in range(column)] for _ in range(row)]
-
-    matrix_str = ''
-    for row in arr:
-        matrix_str += '| ' + ' '.join(str(num) for num in row) + ' |\n'
-    print(matrix_str)
+    print_matrix(arr)
     return arr
-
 
 def insert_value(matrix, row, column, number):
     """
@@ -1028,9 +1023,25 @@ def insert_value(matrix, row, column, number):
     except IndexError:
         print(f'Invalid index {row} {column}')
         return
+    print_matrix(matrix)
     return matrix
 
 
+def print_matrix(matrix):
+    """
+    Function print matrix in a pretty way
+
+    :param matrix: list: list representing matrix
+    """
+
+    matrix_str = ''
+    for row in matrix:
+        matrix_str += ' '.join(str(num) for num in row) + '\n'
+    print(matrix_str)
+
+
 arr1 = create_matrix(5, 5)
-arr2 = insert_value(arr1, 6, 6, 1.4)
-print(arr2)
+arr2 = insert_value(arr1, 4, 4, 69)
+arr2 = insert_value(arr2, 2, 4, 69)
+arr2 = insert_value(arr2, 4, 2, 69)
+arr2 = insert_value(arr2, 1, 4, 69)
