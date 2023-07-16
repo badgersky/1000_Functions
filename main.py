@@ -1040,8 +1040,27 @@ def print_matrix(matrix):
     print(matrix_str)
 
 
-arr1 = create_matrix(5, 5)
-arr2 = insert_value(arr1, 4, 4, 69)
-arr2 = insert_value(arr2, 2, 4, 69)
-arr2 = insert_value(arr2, 4, 2, 69)
-arr2 = insert_value(arr2, 1, 4, 69)
+def smile(size=10):
+    """
+    Function prints smiley face
+
+    :param size: int: size of the smile
+    """
+
+    eye = '@'
+    eyes = eye + ' ' * size + eye
+
+    pattern = '#'
+    smile = ''
+    num = size
+    space_left = 0
+    while num > size // 1.5:
+        smile += ' ' * space_left + pattern + ' ' * num + pattern + '\n'
+        num -= 2
+        space_left += 1
+    
+    smile += ' ' * space_left + pattern * (num + 2)
+    print(eyes + '\n' * (size // 2) + smile)
+    
+
+smile(20)
