@@ -1061,6 +1061,26 @@ def smile(size=10):
     
     smile += ' ' * space_left + pattern * (num + 2)
     print(eyes + '\n' * (size // 2) + smile)
-    
 
-smile(20)
+
+def validate_card_number(number):
+    """
+    Function validates creadit card number
+
+    :param number: str: number to validate
+    :return: bool: True if number is valid, False if number is not valid
+    """
+
+    if '-' in number:
+        split_number = number.split('-')
+        if any([len(number) != 4 for number in split_number]):
+            return False
+        else:
+            number = ''.join(split_number)
+    
+    if len(number) == 16:
+        if number.isnumeric():
+            if number.startswith('4') or number.startswith('5') or number.startswith('6'):
+                if all([str(num) * 4 not in number for num in range(10)]):
+                    return True
+    return False
