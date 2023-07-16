@@ -961,16 +961,16 @@ def travelling_salesman_problem():
 
     cities = ['warszawa', 'gdańsk', 'kraków', 'wrocław', 'poznań']
     graph = [
-        (cities[0], cities[1], 341),
-        (cities[0], cities[2], 299),
-        (cities[0], cities[3], 341),
-        (cities[0], cities[4], 304),
-        (cities[1], cities[2], 584),
-        (cities[1], cities[3], 486),
-        (cities[1], cities[4], 304),
-        (cities[2], cities[3], 304),
-        (cities[2], cities[4], 403),
-        (cities[3], cities[4], 280),
+        (cities[0], cities[1], randint(300, 500)),
+        (cities[0], cities[2], randint(300, 500)),
+        (cities[0], cities[3], randint(300, 500)),
+        (cities[0], cities[4], randint(300, 500)),
+        (cities[1], cities[2], randint(300, 500)),
+        (cities[1], cities[3], randint(300, 500)),
+        (cities[1], cities[4], randint(300, 500)),
+        (cities[2], cities[3], randint(300, 500)),
+        (cities[2], cities[4], randint(300, 500)),
+        (cities[3], cities[4], randint(300, 500)),
     ]
 
     route = [cities[0]]
@@ -992,3 +992,29 @@ def travelling_salesman_problem():
         route.append(curr_city)  # appending current city to route
 
     return f'Route has length: {length} and goes like this: ' + ' - '.join(route)
+
+
+def create_matrix(row, column):
+    """
+    Function creates row x column matrix
+    
+    :param row: int: number of rows
+    :param column: int: number of column
+    :return: list: list representing matrix filled with zeros
+    """
+
+    arr = [[0 for _ in range(column)] for _ in range(row)]
+
+    matrix_str = ''
+    for row in arr:
+        matrix_str += '| ' + ' '.join(str(num) for num in row) + ' |\n'
+    print(matrix_str)
+    return arr
+
+
+create_matrix(5, 5)
+create_matrix(10, 10)
+create_matrix(5, 10)
+create_matrix(8, 5)
+create_matrix(8, 8)
+create_matrix(12, 12)
