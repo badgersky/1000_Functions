@@ -1084,3 +1084,29 @@ def validate_card_number(number):
                 if all([str(num) * 4 not in number for num in range(10)]):
                     return True
     return False
+
+
+def bin_mul(m, n):
+    """
+    Function multiplies two numbers using binary multiplication
+
+    :param m: int first product
+    :param n: second product
+    :return: int: product of m and n
+    """
+
+    if m < n:
+        m, n = n, m
+
+    arr = []
+    while m >= 1:
+        if m % 2 != 0:
+            arr.append(n)
+        m //= 2
+        n *= 2
+
+    return sum(arr)
+
+
+print(bin_mul(10, 100))
+print(bin_mul(12312312, 94385612))
