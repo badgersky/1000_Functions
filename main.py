@@ -1012,9 +1012,25 @@ def create_matrix(row, column):
     return arr
 
 
-create_matrix(5, 5)
-create_matrix(10, 10)
-create_matrix(5, 10)
-create_matrix(8, 5)
-create_matrix(8, 8)
-create_matrix(12, 12)
+def insert_value(matrix, row, column, number):
+    """
+    Function inserts number in matrix in right place
+
+    :param matrix: list: list representing matrix
+    :param row: int: row number
+    :param column: int: column number
+    :param number: int/float: number to insert
+    :return: list: list representing changed matrix
+    """
+
+    try:
+        matrix[row - 1][column - 1] = number
+    except IndexError:
+        print(f'Invalid index {row} {column}')
+        return
+    return matrix
+
+
+arr1 = create_matrix(5, 5)
+arr2 = insert_value(arr1, 6, 6, 1.4)
+print(arr2)
