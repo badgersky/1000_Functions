@@ -1108,5 +1108,30 @@ def bin_mul(m, n):
     return sum(arr)
 
 
-print(bin_mul(10, 100))
-print(bin_mul(12312312, 94385612))
+
+def check_prime(number):
+    """
+    Function checks if number is a prime number
+
+    :param int: number to check
+    :return: bool: True if number is prime else False
+    """
+
+    if number <= 1:
+        return False
+
+    result = True
+    for n in range(2, int(number**0.5) + 1):
+        if number % n == 0:
+            result = False
+
+    return result
+
+
+print(check_prime(17))
+print(check_prime(2))
+print(check_prime(5))
+print(check_prime(4))
+print(check_prime(20))
+print(check_prime(1))
+    
