@@ -1170,14 +1170,22 @@ def my_bin(number):
     return bin_number[::-1]
 
 
-print(my_bin(0))
-print(my_bin(1))
-print(my_bin(2))
-print(my_bin(3))
-print(my_bin(4))
-print(my_bin(7))
-print(my_bin(8))
-print(my_bin(10))
-print(my_bin(16))
-print(my_bin(20))
-print(my_bin(170))
+def bin_to_int(number):
+    """
+    Function converts base 2 integer to base 10 integer
+    
+    :param number: str: binary number to convert
+    :return: int: converted number
+    """
+
+    bin_parts = list(number[::-1])
+    int_number = 0
+
+    for i, part in enumerate(bin_parts):
+        int_number += int(part) * 2**i
+
+    return int_number
+
+
+print(bin_to_int('1100'))
+print(bin_to_int('10101010'))
