@@ -1187,5 +1187,26 @@ def bin_to_int(number):
     return int_number
 
 
-print(bin_to_int('1100'))
-print(bin_to_int('10101010'))
+def check_pythagorean_triangle(a, b, c):
+    """
+    Function checks if triangle is a valid pythagorean triangle
+    
+    :param a: int: first side
+    :param b: int: second side
+    :param c: int: third side
+    :return: bool: True if triangle is valid pythagorean triangle else False
+    """
+    
+    sides = [a, b, c]
+    c = max(sides)
+    sides.remove(c)
+    a, b = sides
+
+    if a**2 + b**2 == c**2:
+        return True
+    return False
+
+
+print(check_pythagorean_triangle(3, 4, 5))
+print(check_pythagorean_triangle(5, 4, 3))
+print(check_pythagorean_triangle(5, 3, 4))
