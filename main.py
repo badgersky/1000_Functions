@@ -1113,7 +1113,7 @@ def check_prime(number):
     """
     Function checks if number is a prime number
 
-    :param int: number to check
+    :param number: int: to check
     :return: bool: True if number is prime else False
     """
 
@@ -1128,10 +1128,26 @@ def check_prime(number):
     return result
 
 
-print(check_prime(17))
-print(check_prime(2))
-print(check_prime(5))
-print(check_prime(4))
-print(check_prime(20))
-print(check_prime(1))
-    
+def prime_factorization(number):
+    """
+    prime factorization of a number
+
+    :param number: int: number to factor
+    :return: list: prime factors of a number
+    """
+
+    k = 2
+    prime_factors = []
+
+    while number > 1:
+        print(k)
+        if number % k == 0:
+            prime_factors.append(k)
+            number /= k
+        else:
+            k += 1
+
+    return prime_factors
+
+
+print(prime_factorization(90))
