@@ -1150,4 +1150,34 @@ def prime_factorization(number):
     return prime_factors
 
 
-print(prime_factorization(90))
+def my_bin(number):
+    """
+    Function coverts base 10 integer to base 2 integer
+
+    :param number: int: number to convert
+    :return: str: number in binary format
+    """
+
+    if number == 0:
+        return '0'
+
+    k = 2
+    bin_number = ''
+    while number != 0:
+        bin_number += str(number % k)
+        number //= 2
+
+    return bin_number[::-1]
+
+
+print(my_bin(0))
+print(my_bin(1))
+print(my_bin(2))
+print(my_bin(3))
+print(my_bin(4))
+print(my_bin(7))
+print(my_bin(8))
+print(my_bin(10))
+print(my_bin(16))
+print(my_bin(20))
+print(my_bin(170))
