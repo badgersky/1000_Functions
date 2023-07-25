@@ -1225,7 +1225,7 @@ def find_smallest_distance(start_point=(0, 0), *points):
     """
     Function returns point and distance where distance between start_point and point is the smallest
 
-    :param start_point: tuple: tuple with numbers - coordinates of start_point, by default (0, 0)
+    :param start_point: tuple: tuple with numbers - coordinates of start_point
     :param points: list: list of tuples with coordinates of points
     :return: tuple, float/int: return point and distance between point and start_point
     """
@@ -1236,4 +1236,19 @@ def find_smallest_distance(start_point=(0, 0), *points):
     return point, distance
 
 
-print(find_smallest_distance((0,0), (1,2), (1, 1), (0.5,0.5), (3, 3), (4, 4), (5, 5), (1, 5)))
+def find_biggest_distance(start_point=(0, 0), *points):
+    """
+    Function returns point and distance where distance between start_point and point is the biggest
+
+    :param start_point: tuple: tuple with numbers - coordinates of start_point
+    :param points: list: list of tuples with coordinates of points
+    :return: tuple, float/int: return point and distance between point and start_point
+    """
+
+    point = max(points, key=lambda point: get_distance_between_points(start_point, point))
+    distance = get_distance_between_points(start_point, point)
+
+    return point, distance
+
+
+print(find_biggest_distance((0,0), (1,2), (2,2), (3,3), (4,3), (2,4), (5,6), (2,7), (8,7)))
