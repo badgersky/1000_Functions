@@ -1219,3 +1219,21 @@ def get_distance_between_points(point1, point2):
     x1, y1 = point1
     x2, y2 = point2
     return (abs(x1 - x2)**2 + abs(y1 - y2)**2)**0.5
+
+
+def find_smallest_distance(start_point=(0, 0), *points):
+    """
+    Function returns point and distance where distance between start_point and point is the smallest
+
+    :param start_point: tuple: tuple with numbers - coordinates of start_point, by default (0, 0)
+    :param points: list: list of tuples with coordinates of points
+    :return: tuple, float/int: return point and distance between point and start_point
+    """
+
+    point = min(points, key=lambda point: get_distance_between_points(start_point, point))
+    distance = get_distance_between_points(start_point, point)
+
+    return point, distance
+
+
+print(find_smallest_distance((0,0), (1,2), (1, 1), (0.5,0.5), (3, 3), (4, 4), (5, 5), (1, 5)))
