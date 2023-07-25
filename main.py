@@ -1207,6 +1207,15 @@ def check_pythagorean_triangle(a, b, c):
     return False
 
 
-print(check_pythagorean_triangle(3, 4, 5))
-print(check_pythagorean_triangle(5, 4, 3))
-print(check_pythagorean_triangle(5, 3, 4))
+def get_distance_between_points(point1, point2):
+    """
+    Function returns distance between point1 and point2
+
+    :param point1: tuple: tuple with two numbers - coordinates of point1
+    :param point1: tuple: tuple with two numbers - coordinates of point2
+    :return: float/int: distance between points
+    """
+
+    x1, y1 = point1
+    x2, y2 = point2
+    return (abs(x1 - x2)**2 + abs(y1 - y2)**2)**0.5
