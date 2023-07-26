@@ -1249,3 +1249,46 @@ def find_biggest_distance(start_point, *points):
     distance = get_distance_between_points(start_point, point)
 
     return point, distance
+
+
+def format_time(sec):
+    """
+    Function converts time in seconds into human readable format
+
+    :param sec: int: number of seconds
+    :return: str: formatted time
+    """
+
+    time = []
+
+    if sec / 3600 < 1:
+        time.append('00')
+    else:
+        h = sec // 3600
+        sec -= 3600 * h
+        time.append(str(h))
+
+    if sec / 60 < 1:
+        time.append('00')
+    else:
+        min = sec // 60
+        sec -= 60 * min
+        if len(str(min)) != 2:
+            time.append(f'0{min}')
+        else:
+            time.append(str(min))
+
+    if len(str(sec)) != 2:
+        time.append(f'0{sec}')
+    else:
+        time.append(str(sec))
+    
+    return ':'.join(time)
+
+
+print(format_time(60))
+print(format_time(30))
+print(format_time(362))
+print(format_time(3603))
+print(format_time(12000123))
+print(format_time(3))
