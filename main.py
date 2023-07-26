@@ -1221,7 +1221,7 @@ def get_distance_between_points(point1, point2):
     return (abs(x1 - x2)**2 + abs(y1 - y2)**2)**0.5
 
 
-def find_smallest_distance(start_point=(0, 0), *points):
+def find_smallest_distance(start_point, *points):
     """
     Function returns point and distance where distance between start_point and point is the smallest
 
@@ -1236,7 +1236,7 @@ def find_smallest_distance(start_point=(0, 0), *points):
     return point, distance
 
 
-def find_biggest_distance(start_point=(0, 0), *points):
+def find_biggest_distance(start_point, *points):
     """
     Function returns point and distance where distance between start_point and point is the biggest
 
@@ -1249,6 +1249,3 @@ def find_biggest_distance(start_point=(0, 0), *points):
     distance = get_distance_between_points(start_point, point)
 
     return point, distance
-
-
-print(find_biggest_distance((0,0), (1,2), (2,2), (3,3), (4,3), (2,4), (5,6), (2,7), (8,7)))
