@@ -1298,4 +1298,16 @@ def how_long_to_reach_speed(acceleration, speed):
     return speed / acceleration
 
 
-print(how_long_to_reach_speed(2, 5))
+def diamond_area(e, f):
+    """
+    Function calculates area of diamond
+    
+    :param e: number: value of short diagonal
+    :param f: number: value of long diagonal
+    :return: float: area of diamond
+    """
+
+    return (e * f) * 0.5
+
+
+print(diamond_area(3, 4))
