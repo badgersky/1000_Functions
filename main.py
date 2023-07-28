@@ -1314,8 +1314,8 @@ def product_of_diagonal(matrix):
     """
     Function calculates product of numbers in matrix diagonal
 
-    :param: matrix: array from which the product will be calculated
-    :return: number: produict of numbers in matrix`s diagonal
+    :param matrix: array from which the product will be calculated
+    :return: number: product of numbers in matrix`s diagonal
     """
 
     if not matrix:
@@ -1331,8 +1331,30 @@ def product_of_diagonal(matrix):
     return product
 
 
-print(product_of_diagonal([[1, 2, 3], [1, 2, 3], [1, 2, 3]]))
-print(product_of_diagonal([[1, 2, 3], [1, 2, 3]]))
-print(product_of_diagonal([[1, 2], [1, 2], [1, 2], [1, 2]]))
-print(product_of_diagonal([[1, 2, 3, 4, 5]]))
-print(product_of_diagonal([]))
+def product_of_column(matrix, column=1):
+    """
+    Function calculates product of numbers from given column
+    
+    :param matrix: array from which the product will be calculated
+    :param column: int: index of column to take numbers from for the product
+    :return: number: product of numbers from given column
+    """
+
+    if not matrix:
+        return 0
+    
+    product = 1
+    for row in matrix:
+        try:
+            product *= row[column - 1]
+        except IndexError:
+            return f'given column index is bigger than matrix size'
+        
+    return product
+
+
+print(product_of_column([[1, 2, 3], [3, 2, 1]], 1))
+print(product_of_column([[1, 2, 3], [3, 2, 1]], 2))
+print(product_of_column([[1, 2, 3], [3, 2, 1]], 3))
+print(product_of_column([]))
+print(product_of_column([[1, 2, 3], [2, 2, 2]], 5))
