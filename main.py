@@ -1286,9 +1286,16 @@ def format_time(sec):
     return ':'.join(time)
 
 
-print(format_time(60))
-print(format_time(30))
-print(format_time(362))
-print(format_time(3603))
-print(format_time(12000123))
-print(format_time(3))
+def how_long_to_reach_speed(acceleration, speed):
+    """
+    Function calculates how long will it take to reach speed with given acceleration
+
+    :param acceleratio: number: value of acceleration in m/s²
+    :param speed: number: sppeed  to reach in m/s
+    :return: number: time needed to reach speed with given acceleration
+    """
+
+    return speed / acceleration
+
+
+print(how_long_to_reach_speed(2, 5))
