@@ -1310,4 +1310,29 @@ def diamond_area(e, f):
     return (e * f) * 0.5
 
 
-print(diamond_area(3, 4))
+def product_of_diagonal(matrix):
+    """
+    Function calculates product of numbers in matrix diagonal
+
+    :param: matrix: array from which the product will be calculated
+    :return: number: produict of numbers in matrix`s diagonal
+    """
+
+    if not matrix:
+        return 0
+    
+    product = 1
+    for i in range(len(matrix)):
+        try:
+            product *= matrix[i][i]
+        except IndexError:
+            continue
+
+    return product
+
+
+print(product_of_diagonal([[1, 2, 3], [1, 2, 3], [1, 2, 3]]))
+print(product_of_diagonal([[1, 2, 3], [1, 2, 3]]))
+print(product_of_diagonal([[1, 2], [1, 2], [1, 2], [1, 2]]))
+print(product_of_diagonal([[1, 2, 3, 4, 5]]))
+print(product_of_diagonal([]))
