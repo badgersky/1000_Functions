@@ -1404,5 +1404,22 @@ def multi_addition(arr1, arr2):
     return [arr1[i] + arr2[i] for i in range(limit)]
 
 
-print(multi_addition([1, 2, 3], [1, 1, 1]))
-print(multi_addition([1, 2, 3], [1]))
+def multi_sbstraction(arr1, arr2):
+    """
+    Function substracts numbers with the same indexes from arrays
+
+    :param arr1: list: list of numbers to substract
+    :param arr2: list: list of numbers to substract
+    :return: list: list consisting of substracted numbers from arr1 and arr2
+    """ 
+
+    limit = len(arr1)
+    if limit != len(arr2):
+        return f'arrays must be the same size'
+    
+    return [arr1[i] - arr2[i] for i in range(limit)]
+
+
+print(multi_sbstraction([1, 2, 3], [1]))
+print(multi_sbstraction([1, 2, 3], [1, 2, 3]))
+print(multi_sbstraction([1, 2, 3], [3, 2, 1]))
