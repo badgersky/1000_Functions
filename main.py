@@ -1353,9 +1353,9 @@ def product_of_column(matrix, column=1):
     return product
 
 
-def multiply_arrays(arr1, arr2):
+def multi_multiply(arr1, arr2):
     """
-    Function multiplies given arrays, they must be the same size
+    Function multiplies numbers with the same indeces from arrays
 
     :param arr1: list: list of numbers to multiply
     :param arr2: list: list of numbers to multiply
@@ -1364,12 +1364,31 @@ def multiply_arrays(arr1, arr2):
 
     limit = len(arr1)
     if limit != len(arr2):
-        return f'Arrays must be the same size'
+        return f'arrays must be the same size'
 
     return [arr1[i] * arr2[i] for i in range(limit)]
 
 
-print(multiply_arrays([], []))
-print(multiply_arrays([1], [2]))
-print(multiply_arrays([1, 2, 3], [2, 2, 2]))
-print(multiply_arrays([1, 2, 3, 4], [0]))
+def multi_division(arr1, arr2):
+    """
+    Function divides numbers with the same indeces from arrays
+
+    :param arr1: list: list of numbers to divide
+    :param arr2: list: list of numbers to divide
+    :return: list: list consisting of divided numbers from arr1 and arr2
+    """
+
+    limit = len(arr1)
+    if limit != len(arr2):
+        return f'arrays must be the same size'
+
+    try:
+        return [arr1[i] / arr2[i] for i in range(limit)]
+    except ZeroDivisionError as e:
+        return f'{e}'
+    
+
+print(multi_division([1, 2], [1, 0]))
+print(multi_division([1, 2], [1, 1]))
+print(multi_division([4, 4], [1, 2]))
+print(multi_division([3, 2], [2, 1]))
