@@ -1353,8 +1353,23 @@ def product_of_column(matrix, column=1):
     return product
 
 
-print(product_of_column([[1, 2, 3], [3, 2, 1]], 1))
-print(product_of_column([[1, 2, 3], [3, 2, 1]], 2))
-print(product_of_column([[1, 2, 3], [3, 2, 1]], 3))
-print(product_of_column([]))
-print(product_of_column([[1, 2, 3], [2, 2, 2]], 5))
+def multiply_arrays(arr1, arr2):
+    """
+    Function multiplies given arrays, they must be the same size
+
+    :param arr1: list: list of numbers to multiply
+    :param arr2: list: list of numbers to multiply
+    :return: list: list consisting of multiplied numbers from arr1 and arr2
+    """
+
+    limit = len(arr1)
+    if limit != len(arr2):
+        return f'Arrays must be the same size'
+
+    return [arr1[i] * arr2[i] for i in range(limit)]
+
+
+print(multiply_arrays([], []))
+print(multiply_arrays([1], [2]))
+print(multiply_arrays([1, 2, 3], [2, 2, 2]))
+print(multiply_arrays([1, 2, 3, 4], [0]))
