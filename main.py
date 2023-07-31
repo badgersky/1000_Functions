@@ -1355,7 +1355,7 @@ def product_of_column(matrix, column=1):
 
 def multi_multiply(arr1, arr2):
     """
-    Function multiplies numbers with the same indeces from arrays
+    Function multiplies numbers with the same indexes from arrays
 
     :param arr1: list: list of numbers to multiply
     :param arr2: list: list of numbers to multiply
@@ -1371,7 +1371,7 @@ def multi_multiply(arr1, arr2):
 
 def multi_division(arr1, arr2):
     """
-    Function divides numbers with the same indeces from arrays
+    Function divides numbers with the same indexes from arrays
 
     :param arr1: list: list of numbers to divide
     :param arr2: list: list of numbers to divide
@@ -1388,7 +1388,21 @@ def multi_division(arr1, arr2):
         return f'{e}'
     
 
-print(multi_division([1, 2], [1, 0]))
-print(multi_division([1, 2], [1, 1]))
-print(multi_division([4, 4], [1, 2]))
-print(multi_division([3, 2], [2, 1]))
+def multi_addition(arr1, arr2):
+    """
+    Function adds numbers with the same indexes from arrays
+
+    :param arr1: list: list of numbers to add
+    :param arr2: list: list of numbers to add
+    :return: list: list consisting of added numbers from arr1 and arr2
+    """
+        
+    limit = len(arr1)
+    if limit != len(arr2):
+        return f'arrays must be the same size'
+
+    return [arr1[i] + arr2[i] for i in range(limit)]
+
+
+print(multi_addition([1, 2, 3], [1, 1, 1]))
+print(multi_addition([1, 2, 3], [1]))
