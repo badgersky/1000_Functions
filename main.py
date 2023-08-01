@@ -1473,4 +1473,15 @@ def find_smallest_occurence_number(arr):
     return min(arr, key=arr.count)
 
 
-print(find_smallest_occurence_number([1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 5, 5, 3, 6, 6]))
+def find_biggest_occurence_number(arr):
+    """
+    Function returns number that occures the most times
+
+    :param arr: list of numbers
+    :return: float/int: number that occures the most times in given array
+    """
+
+    return max(arr, key=arr.count)
+
+
+print(find_biggest_occurence_number([1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 5, 6, 7, 1, 1, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]))
