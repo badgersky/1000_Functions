@@ -1420,6 +1420,25 @@ def multi_sbstraction(arr1, arr2):
     return [arr1[i] - arr2[i] for i in range(limit)]
 
 
-print(multi_sbstraction([1, 2, 3], [1]))
-print(multi_sbstraction([1, 2, 3], [1, 2, 3]))
-print(multi_sbstraction([1, 2, 3], [3, 2, 1]))
+def calculate_circuit_with_points(points):
+    """
+    Function calculates circuit of a figure with given points
+
+    :param points: list: list of tuples, each tuple consist of x and y coordinate of a point
+    :return: number: circuit of a figure
+    """
+
+    if len(points) <= 2:
+        return f'valid figure must consist of at least 3 points'
+
+    circuit = 0
+    for i, point in enumerate(points):
+        if i == len(points) - 1:
+            circuit += line_length(*point, *points[0])
+        else:
+            circuit += line_length(*point, *points[i + 1])
+
+    return circuit
+
+
+print(calculate_circuit_with_points([(0, 0), (0, 2)]))
