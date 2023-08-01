@@ -1462,4 +1462,15 @@ def calculate_area_with_points(points):
     return abs(area / 2)
 
 
-print(calculate_area_with_points([(0, 0), (0, 4), (2, 4), (2, 0)]))
+def find_smallest_occurence_number(arr):
+    """
+    Function returns number that occures the fewest times
+
+    :param arr: list: list of numbers
+    :return: float/int: number that occures the fewest times in given array
+    """
+
+    return min(arr, key=arr.count)
+
+
+print(find_smallest_occurence_number([1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 5, 5, 3, 6, 6]))
