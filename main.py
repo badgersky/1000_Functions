@@ -1441,4 +1441,25 @@ def calculate_circuit_with_points(points):
     return circuit
 
 
-print(calculate_circuit_with_points([(0, 0), (0, 2)]))
+def calculate_area_with_points(points):
+    """
+    Function calculates area of a figure with given points
+    
+    :param points: list: list of tuples, each tuple consist of x and y coordinate of a point
+    :return: number: area of a figure
+    """
+
+    if len(points) <= 2:
+        return f'valid figure must consist of at least 3 points'
+    
+    area = 0
+    for i, point in enumerate(points):
+        if i == len(points) - 1:
+            pass
+        else:
+            area += (point[0] * points[i + 1][1] - point[1] * points[i + 1][0])
+    
+    return abs(area / 2)
+
+
+print(calculate_area_with_points([(0, 0), (0, 4), (2, 4), (2, 0)]))
