@@ -1484,4 +1484,22 @@ def find_biggest_occurence_number(arr):
     return max(arr, key=arr.count)
 
 
-print(find_biggest_occurence_number([1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 5, 6, 7, 1, 1, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]))
+def find_shortest_way_between_points(points):
+    """
+    Funciton finds the shortest way between two points from given list
+
+    :param points: list: list of tuples, each consists of x, y coordinates of point
+    :return: tuple, float: tuple with two points and length of way between them
+    """
+
+    ways = {}
+    for point1 in points:
+        for point2 in points:
+            if point1 != point2:
+                ways[(point1, point2)] = get_distance_between_points(point1, point2)
+
+    shortest_way_points = min(ways.items(), key=lambda item: item[1])
+    return shortest_way_points
+
+
+print(find_shortest_way_between_points([(2, 3), (2, 4), (123, 12312), (123, 91827319283), (0, 0), (21, 0)]))
