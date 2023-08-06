@@ -1486,7 +1486,7 @@ def find_biggest_occurence_number(arr):
 
 def find_shortest_way_between_points(points):
     """
-    Funciton finds the shortest way between two points from given list
+    Function finds the shortest way between two points from given list
 
     :param points: list: list of tuples, each consists of x, y coordinates of point
     :return: tuple, float: tuple with two points and length of way between them
@@ -1502,4 +1502,25 @@ def find_shortest_way_between_points(points):
     return shortest_way_points
 
 
-print(find_shortest_way_between_points([(2, 3), (2, 4), (123, 12312), (123, 91827319283), (0, 0), (21, 0)]))
+def how_long_jurney(avg_speed, distance):
+    """
+    Function calculates how long your jurney will take with given average speed in km/h and distance in km
+    
+    :param avg_speed: number: traveling speed in km/h
+    :param distance: number: distance to travel in km
+    :return: str: human readable formatted time string
+    """
+
+    if avg_speed * distance <= 0:
+        return f'Speed and distance must be positive numbers'
+
+    time_h = distance / avg_speed
+    time_s = time_h * 3600
+    return format_time(int(time_s))
+
+
+print(how_long_jurney(60, 60))
+print(how_long_jurney(60, 0))
+print(how_long_jurney(0, 60))
+print(how_long_jurney(60, 120))
+print(how_long_jurney(60, 150))
