@@ -2,6 +2,7 @@ import random
 from math import pi, atan
 from random import randint
 from string import ascii_lowercase
+import os
 
 
 def rectangle_area(a, b):
@@ -1539,7 +1540,15 @@ def linear_function(a, b, x):
         return f'All parameters must be numbers'
 
 
-print(linear_function(1, 1, 8))
-print(linear_function('siema', 'dupa', 8))
-print(linear_function(1, 1, 1))
-print(linear_function('simea', 1, 1))
+def save_to_text_file():
+    prompt = 'Type what you want to save: '
+    message = input(prompt)
+
+    path = os.getcwd()
+    with open(os.path.join(path, 'message.txt'), 'w') as file:
+        file.write(message)
+
+    return True
+
+
+save_to_text_file()
