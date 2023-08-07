@@ -1530,13 +1530,16 @@ def linear_function(a, b, x):
     :return: number: value of y
     """
 
+    if not all([isinstance(num, int) for num in (a, b, x)]) and not all(isinstance(num, float) for num in (a, b, x)):
+        return f'All parameters must be numbers'
+
     try:
         return a * x + b
-    except (ValueError, TypeError):
+    except TypeError:
         return f'All parameters must be numbers'
-    
 
-print(linear_function(1, 2, 1))
-print(linear_function(3, 3, 1))
-print(linear_function(4, 4, 1))
-print(linear_function(1, 2, 'dupa'))
+
+print(linear_function(1, 1, 8))
+print(linear_function('siema', 'dupa', 8))
+print(linear_function(1, 1, 1))
+print(linear_function('simea', 1, 1))
