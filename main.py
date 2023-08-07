@@ -1519,8 +1519,24 @@ def how_long_jurney(avg_speed, distance):
     return format_time(int(time_s))
 
 
-print(how_long_jurney(60, 60))
-print(how_long_jurney(60, 0))
-print(how_long_jurney(0, 60))
-print(how_long_jurney(60, 120))
-print(how_long_jurney(60, 150))
+def linear_function(a, b, x):
+    """
+    function calculates y with given a, b, x
+
+    :param a: number: parameter a in equation ax + b = y
+    :param b: number: parameter b in equation ax + b = y
+    :param x: number: x for which y is calculated
+
+    :return: number: value of y
+    """
+
+    try:
+        return a * x + b
+    except (ValueError, TypeError):
+        return f'All parameters must be numbers'
+    
+
+print(linear_function(1, 2, 1))
+print(linear_function(3, 3, 1))
+print(linear_function(4, 4, 1))
+print(linear_function(1, 2, 'dupa'))
