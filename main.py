@@ -1541,6 +1541,10 @@ def linear_function(a, b, x):
 
 
 def save_to_text_file():
+    """
+    Function saves user input into txt file
+    """
+
     prompt = 'Type what you want to save: '
     message = input(prompt)
 
@@ -1551,4 +1555,38 @@ def save_to_text_file():
     return True
 
 
-save_to_text_file()
+def kilograms_to_pounds(weight):
+    """
+    Function converts kilograms to pounds
+    
+    :param weight: number: weight in kilograms
+    :return: number: weight in pounds
+    """
+
+    if not isinstance(weight, int) and not isinstance(weight, float):
+        return f'Weight must be a number'
+    return weight * 2.20462262
+
+
+def pounds_to_kilograms(weight):
+    """
+    Function converts pounds to kilograms
+
+    :param weight: number: weight in pounds
+    :return: number: weight in kilograms
+    """
+
+    if not isinstance(weight, int) and not isinstance(weight, float):
+        return f'Weight must be a number'
+    return weight / 2.20462262
+
+
+print(pounds_to_kilograms(1))
+
+print(pounds_to_kilograms(90))
+
+print(pounds_to_kilograms(200))
+
+print(pounds_to_kilograms(100))
+
+print(pounds_to_kilograms('dupa'))
