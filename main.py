@@ -1581,12 +1581,19 @@ def pounds_to_kilograms(weight):
     return weight / 2.20462262
 
 
-print(pounds_to_kilograms(1))
+def calculate_megabytes(bytes):
+    """
+    Function calculates number of megabytes based on bytes
 
-print(pounds_to_kilograms(90))
+    :param bytes: int: number of bytes
+    :return: str: number of megabytes in formatted string
+    """
 
-print(pounds_to_kilograms(200))
+    return '{0:.2f} MiB'.format(bytes / (1024 * 1024))
 
-print(pounds_to_kilograms(100))
 
-print(pounds_to_kilograms('dupa'))
+print(calculate_megabytes(1024 * 1024))
+print(calculate_megabytes(10**10))
+print(calculate_megabytes(109283102938))
+print(calculate_megabytes(102938120938102938123))
+print(calculate_megabytes(12031))
