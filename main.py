@@ -1592,8 +1592,24 @@ def calculate_megabytes(bytes):
     return '{0:.2f} MiB'.format(bytes / (1024 * 1024))
 
 
-print(calculate_megabytes(1024 * 1024))
-print(calculate_megabytes(10**10))
-print(calculate_megabytes(109283102938))
-print(calculate_megabytes(102938120938102938123))
-print(calculate_megabytes(12031))
+def number_pyramid(size):
+    """
+    Function makes pyramid with given size out of numbers in range of size
+    
+    :param size: size of the pyramid
+    :return: str: pyramid made of numbers in range of size
+    """
+
+    if not (1 < size < 10):
+        return None
+
+    for i in range(1, size + 1):
+        print(str(i) * i)
+
+
+number_pyramid(5)
+number_pyramid(2)
+number_pyramid(10)
+number_pyramid(4)
+number_pyramid(-10)
+
