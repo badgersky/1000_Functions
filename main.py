@@ -1650,8 +1650,20 @@ def circle_circumference(r):
     """
     Function calculates circumference from radius
 
-    :param r: number: radius of circle
+    :param r: number: radius of a circle
     :return: number: circumference of circle
     """
 
     return 2*r*pi
+
+
+def radius_circumference_ratio(r):
+    """
+    Function returns ratio between circumference and radius
+    
+    :param r: number: radius of a circle
+    :return: number: circumference / radius ratio
+    """
+
+    circumference = circle_circumference(r)
+    return circumference / r
