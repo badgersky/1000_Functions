@@ -1605,11 +1605,3 @@ def number_pyramid(size):
 
     for i in range(1, size + 1):
         print(str(i) * i)
-
-
-number_pyramid(5)
-number_pyramid(2)
-number_pyramid(10)
-number_pyramid(4)
-number_pyramid(-10)
-
