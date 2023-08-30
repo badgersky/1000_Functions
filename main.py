@@ -1615,3 +1615,12 @@ def pow(x, y):
     """
 
     return x**y
+
+
+def sqrt(n):
+    """
+    :param n: number: number you want to get squareroot of
+    :return:number: squareroot of n
+    """
+
+    return n**0.5
