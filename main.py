@@ -3,6 +3,7 @@ from math import pi, atan
 from random import randint
 from string import ascii_lowercase
 import os
+from decimal import Decimal
 
 
 def rectangle_area(a, b):
@@ -1620,7 +1621,26 @@ def pow(x, y):
 def sqrt(n):
     """
     :param n: number: number you want to get squareroot of
-    :return:number: squareroot of n
+    :return: number: squareroot of n
     """
 
     return n**0.5
+
+
+def get_fib_number(n):
+    """
+    function returns number from fibonacci sequence with given index n
+
+    :param n: number: index of fibonacci number you want to get
+    :return: int: number from fibonacci sequence
+    """
+
+    i = 1
+    x, y = 1, 1
+    while i < n:
+        z = y + x
+        x = y
+        y = z
+        i += 1
+
+    return x
