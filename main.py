@@ -1644,3 +1644,14 @@ def get_fib_number(n):
         i += 1
 
     return x
+
+
+def circle_circumference(r):
+    """
+    Function calculates circumference from radius
+
+    :param r: number: radius of circle
+    :return: number: circumference of circle
+    """
+
+    return 2*r*pi
