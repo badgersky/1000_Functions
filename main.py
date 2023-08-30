@@ -1605,3 +1605,13 @@ def number_pyramid(size):
 
     for i in range(1, size + 1):
         print(str(i) * i)
+
+
+def pow(x, y):
+    """
+    :param x: number: base number
+    :param y: number: exponent
+    :return: number: x to the power of y
+    """
+
+    return x**y
