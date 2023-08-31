@@ -1667,3 +1667,20 @@ def radius_circumference_ratio(r):
 
     circumference = circle_circumference(r)
     return circumference / r
+
+
+def find_multiplicative_order(a, n):
+    """
+    Function finds multiplicative order a modulo n - the smallest integer k such
+    that a^k % n = 1
+
+    :param a: int: base number
+    :param n: int: modulo number
+    :return: int: multiplicative order
+    """
+
+    multiplicative_group = []
+    for num in range(1, n):
+        multiplicative_group.append((num, (a**num) % n))
+
+    return min(multiplicative_group, key=lambda item: item[1])[0]
