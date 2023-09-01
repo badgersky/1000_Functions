@@ -1707,5 +1707,4 @@ def cartesian_product(set_a, set_b):
     :return: list: list of tuples with elements from both factors
     """
 
-    product = [(a, b) for a in set_a for b in set_b]
-    return product
+    return [(a, b) for a in set_a for b in set_b]
