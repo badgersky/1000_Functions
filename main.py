@@ -1696,3 +1696,16 @@ def product(*args):
     """
 
     return [values for values in zip(*args)]
+
+
+def cartesian_product(set_a, set_b):
+    """
+    Function calculates cartesian product of two sets a and b
+
+    :param set_a: list: first factor
+    :param set_b: list: second factor
+    :return: list: list of tuples with elements from both factors
+    """
+
+    product = [(a, b) for a in set_a for b in set_b]
+    return product
