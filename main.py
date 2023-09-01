@@ -1708,3 +1708,20 @@ def cartesian_product(set_a, set_b):
     """
 
     return [(a, b) for a in set_a for b in set_b]
+
+
+def dot_product(v1, v2):
+    """
+    Function calculates dot product of two vectors
+
+    :param v1: list: first factor
+    :param v2: list: second factor
+    :return: list: dot product of v1 and v2
+    """
+    if len(v1) != len(v2):
+        raise ValueError('vectors must be the same size')
+
+    return sum([num1 * num2 for num1, num2 in zip(v1, v2)])
+
+
+print(dot_product([1, 3, -5], [1, 3, -5]))
