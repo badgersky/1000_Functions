@@ -1684,3 +1684,15 @@ def find_multiplicative_order(a, n):
         multiplicative_group.append((num, (a**num) % n))
 
     return min(multiplicative_group, key=lambda item: item[1])[0]
+
+
+def product(*args):
+    """
+    Function aggregates values from each sequence given as argument,
+    stops when shortest sequence is finished.
+
+    :param args: list: iterables
+    :return: list: list of tuples in each tuple there will be values from each iterable
+    """
+
+    return [values for values in zip(*args)]
