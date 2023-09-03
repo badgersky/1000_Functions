@@ -1724,4 +1724,19 @@ def dot_product(v1, v2):
     return sum([num1 * num2 for num1, num2 in zip(v1, v2)])
 
 
-print(dot_product([1, 3, -5], [1, 3, -5]))
+def connect_lists(*iterables):
+    """
+    Function connects given lists into one
+
+    :param iterables: lists to connect
+    :return: list: connected list
+    """
+
+    out_arr = []
+    for iterable in iterables:
+        if not isinstance(iterable, list):
+            raise ValueError(f'Given arguments must be valid lists')
+        else:
+            out_arr.extend(iterable)
+
+    return out_arr
