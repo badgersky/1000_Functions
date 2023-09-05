@@ -1740,3 +1740,41 @@ def connect_lists(*iterables):
             out_arr.extend(iterable)
 
     return out_arr
+
+
+def create_spiral(columns, rows):
+    """
+    Function creates spiral made of integers. Spiral will be of size columns X rows.
+
+    :param columns: int: number of columns
+    :param rows: int: number of rows
+    :return: list: spiral as 2D list
+    """
+
+    spiral = [[None for _ in range(columns)] for _ in range(rows)]
+    curr_pos = [0, 0]
+    moves = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+    curr_move = 0
+    active = True
+    i = 1
+
+    while active:
+        spiral[curr_pos[0]][curr_pos[1]] = i
+        new_pos = [curr_pos[0] + moves[curr_move][0], curr_pos[1] + moves[curr_move][1]]
+
+        if new_pos[0] < 0 or new_pos[0] >= rows or new_pos[1] < 0 or new_pos[1] >= columns or spiral[new_pos[0]][new_pos[1]] != None:
+            curr_move = (curr_move + 1) % 4
+            new_pos = [curr_pos[0] + moves[curr_move][0], curr_pos[1] + moves[curr_move][1]]
+        
+        curr_pos = new_pos
+
+        if all([True if all(row) else False for row in spiral]):
+            active = False
+ 
+        i += 1
+ 
+    return spiral
+
+
+for row in create_spiral(2, 2):
+    print(*row)
