@@ -1776,5 +1776,15 @@ def create_spiral(columns, rows):
     return spiral
 
 
-for row in create_spiral(2, 2):
-    print(*row)
+def accumulate_numbers(arr):
+    """
+    Function accumulates numbers in list
+
+    :param arr: list: lsit of numbers to accumulate
+    :return: list: accumulated list
+    """
+
+    return [sum(arr[:i + 1]) for i in range(len(arr))]
+
+
+print(accumulate_numbers([1, 2, 3, 4, 5]))
