@@ -1827,3 +1827,14 @@ def max_abs2(arr):
             biggest_num = num
 
     return biggest_num
+
+
+def min_abs1(arr):
+    """
+    Funciton return number with smallest absolute value from an array
+
+    :param arr: list: list of numbers 
+    :return: number: number with smallest absolute value from a list
+    """
+
+    return min(arr, key=lambda x: abs(x))
