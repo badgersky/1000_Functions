@@ -1787,4 +1787,19 @@ def accumulate_numbers(arr):
     return [sum(arr[:i + 1]) for i in range(len(arr))]
 
 
-print(accumulate_numbers([1, 2, 3, 4, 5]))
+def multiply_arr(arr):
+    """
+    Function mulitplies every number in array
+
+    :param arr: list: list of numbers to multiply
+    :return: list: multiplied array
+    """
+
+    result = 1
+    for number in arr:
+        result *= number
+
+    return result
+
+
+print(multiply_arr([1, 0, 3, 4, 5]))
