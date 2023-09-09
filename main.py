@@ -1838,3 +1838,22 @@ def min_abs1(arr):
     """
 
     return min(arr, key=lambda x: abs(x))
+
+
+def min_abs2(arr):
+    """
+    Funciton return number with smallest absolute value from an array
+
+    :param arr: list: list of numbers 
+    :return: number: number with smallest absolute value from a list
+    """
+
+    smallest_num = arr[0]
+    for num in arr:
+        if abs(num) < abs(smallest_num):
+            smallest_num = num
+
+    return smallest_num
+
+
+print(min_abs2([-2, 3, 4, 5, 6, 10]))
