@@ -1811,3 +1811,19 @@ def max_abs1(arr):
     """
 
     return max(arr, key=lambda x: abs(x))
+
+
+def max_abs2(arr):
+    """
+    Funciton return number with biggest absolute value from an array
+
+    :param arr: list: list of numbers 
+    :return: number: number with biggest absolute value from a list
+    """
+
+    biggest_num = arr[0]
+    for num in arr:
+        if abs(num) > abs(biggest_num):
+            biggest_num = num
+
+    return biggest_num
