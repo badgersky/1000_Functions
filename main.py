@@ -1802,4 +1802,12 @@ def multiply_arr(arr):
     return result
 
 
-print(multiply_arr([1, 0, 3, 4, 5]))
+def max_abs1(arr):
+    """
+    Funciton return number with biggest absolute value from an array
+
+    :param arr: list: list of numbers 
+    :return: number: number with biggest absolute value from a list
+    """
+
+    return max(arr, key=lambda x: abs(x))
