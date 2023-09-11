@@ -1856,7 +1856,7 @@ def min_abs2(arr):
     return smallest_num
 
 
-def check_armstrong_number(number):
+def is_armstrong_number(number):
     """
     Function checks in given number is an armstrong number.
 
@@ -1869,3 +1869,24 @@ def check_armstrong_number(number):
     if sum(int(num) ** power for num in str(number)) == number:
         return True
     return False
+
+
+def is_abundant(number):
+    """
+    Function checks if number is abundant or not
+
+    :param number: int: number to check
+    :return: bool: True if number is abundant, else False 
+    """
+    
+    answer = False
+    sum_of_divisors = 0
+
+    for n in range(1, number // 2 + 1):
+        if number % n == 0:
+            sum_of_divisors += n
+        
+        if sum_of_divisors > number:
+            answer = True
+
+    return answer
