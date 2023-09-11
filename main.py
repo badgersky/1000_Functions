@@ -1878,7 +1878,7 @@ def is_abundant(number):
     :param number: int: number to check
     :return: bool: True if number is abundant, else False 
     """
-    
+
     answer = False
     sum_of_divisors = 0
 
@@ -1888,5 +1888,26 @@ def is_abundant(number):
         
         if sum_of_divisors > number:
             answer = True
+
+    return answer
+
+
+def is_perfect(number):
+    """
+    Function checks if number is perfect
+
+    :param number: int: number to check
+    :return: bool: True if number is perfect, False otherwise
+    """
+
+    answer = False
+    sum_of_divisors = 0
+
+    for n in range(1, number // 2 + 1):
+        if number % n == 0:
+            sum_of_divisors += n
+
+    if sum_of_divisors == number:
+        answer = True
 
     return answer
