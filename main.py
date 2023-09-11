@@ -1856,4 +1856,16 @@ def min_abs2(arr):
     return smallest_num
 
 
-print(min_abs2([-2, 3, 4, 5, 6, 10]))
+def check_armstrong_number(number):
+    """
+    Function checks in given number is an armstrong number.
+
+    :param number: int: number to check
+    :return: bool: True if number is an armstrong number, else False
+    """
+
+    power = len(str(number))
+
+    if sum(int(num) ** power for num in str(number)) == number:
+        return True
+    return False
