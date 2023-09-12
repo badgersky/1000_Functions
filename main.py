@@ -549,7 +549,7 @@ def calculate_azimuth(x1, y1, x2, y2):
         return 360 - q_angle_deg
 
 
-def generate_dividers(number):
+def generate_divisors(number):
     """
 
     :param number: int: number that you want to find dividers of
@@ -1911,3 +1911,20 @@ def is_perfect(number):
         answer = True
 
     return answer
+
+
+def my_zip(*iterables):
+    """
+    Function iterates through all given iterables at the same time, stops when shortest iterable is finished
+    
+    :param: iterables: lists, tuples to iterate through
+    :return: tuple: generates tuple of elements from each iterable at the same index
+    """
+
+    shortest_length = len(min(iterables, key=lambda iterable: len(iterable)))
+
+    for i in range(shortest_length):
+        result = []
+        for iterable in iterables:
+            result.append(iterable[i])
+        yield tuple(result)
