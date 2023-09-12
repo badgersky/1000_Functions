@@ -1928,3 +1928,21 @@ def my_zip(*iterables):
         for iterable in iterables:
             result.append(iterable[i])
         yield tuple(result)
+
+
+def how_long_to_double_money(savings, percent):
+    """
+    Function calculates how long will it take to double your money on savings account
+
+    :param savings: integer: amount of money on account
+    :param percent: integer: annual interest_rate
+    :return: str: formatted number of years after which you will double your money
+    """
+
+    i = 0
+    input_money = savings
+    while savings / 2 < input_money:
+        savings += savings * percent / 100
+        i += 1
+
+    return f'It will take {i} years to double your money on this account.'
