@@ -1966,3 +1966,20 @@ def is_pandigital(number):
     if comparison_set == set(str(number)):
         return True
     return False
+
+
+def is_prime(number):
+    """
+    Function checks if number is prime number
+
+    :param number: int: number to check
+    :return: bool: True if number is prime, False otherwise
+    """
+
+    result = True
+    for num in range(2, int(number ** 0.5) + 1):
+        if number % num == 0:
+            result = False
+            break
+
+    return result
