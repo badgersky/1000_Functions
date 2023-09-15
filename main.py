@@ -1946,3 +1946,23 @@ def how_long_to_double_money(savings, percent):
         i += 1
 
     return f'It will take {i} years to double your money on this account.'
+
+
+def is_pandigital(number):
+    """
+    Function checks if number is pandigital
+
+    :param number: int: number to check
+    :return: bool: True if number is pandigital, False otherwise
+    """
+
+    start = 0
+    if '0' not in str(number):
+        start = 1
+
+    n = len(str(number))
+    comparison_set = set(''.join(str(num) for num in range(start, n + 1)))
+
+    if comparison_set == set(str(number)):
+        return True
+    return False
