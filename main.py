@@ -1998,11 +1998,16 @@ def is_triangular(number):
     return False
 
 
-print(is_triangular(10))
-print(is_triangular(3))
-print(is_triangular(6))
-print(is_triangular(21))
-print(is_triangular(28))
-print(is_triangular(36))
-print(is_triangular(4))
-print(is_triangular(8))
+def get_triangular_num(n):
+    """
+    Function returns nth triangular number
+
+    :param n: int: index of nth triangular number
+    :return: int: nth triangular number
+    """
+
+    return (n * (n + 1)) // 2
+
+
+for i in range(1, 11):
+    print(get_triangular_num(i))
