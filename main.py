@@ -1983,3 +1983,26 @@ def is_prime(number):
             break
 
     return result
+
+
+def is_triangular(number):
+    """
+    Function checks if number is triangular
+
+    :param number: int: number to check
+    :return: bool: True if number is triangular
+    """
+
+    if ((sqrt(8 * number + 1) - 1) / 2).is_integer():
+        return True
+    return False
+
+
+print(is_triangular(10))
+print(is_triangular(3))
+print(is_triangular(6))
+print(is_triangular(21))
+print(is_triangular(28))
+print(is_triangular(36))
+print(is_triangular(4))
+print(is_triangular(8))
