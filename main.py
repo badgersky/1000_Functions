@@ -2009,5 +2009,14 @@ def get_triangular_num(n):
     return (n * (n + 1)) // 2
 
 
-for i in range(1, 11):
-    print(get_triangular_num(i))
+def is_hexagonal(number):
+    """
+    Function checks if number is hexagonal
+
+    :param number: int: number to check
+    :return: bool: True if number is hexagonal
+    """
+
+    if ((sqrt(8 * number + 1) + 1) / 4).is_integer():
+        return True
+    return False
