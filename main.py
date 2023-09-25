@@ -2020,3 +2020,14 @@ def is_hexagonal(number):
     if ((sqrt(8 * number + 1) + 1) / 4).is_integer():
         return True
     return False
+
+
+def get_hexagonal_num(n):
+    """
+    Function returns nth hexagonal number
+
+    :param n: int: index of nth hexagonal number
+    :return: int: nth hexagonal number
+    """
+
+    return (2 * n * (2 * n - 1)) // 2
