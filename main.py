@@ -2042,3 +2042,14 @@ def is_pentagonal(number):
     """
 
     return ((sqrt(24 * number + 1) + 1) / 6).is_integer()
+
+
+def get_pentagonal_num(n):
+    """
+    Function returns nth pentagonal number
+
+    :param n: int: index of nth pentagonal number
+    :return: int: nth pentagonal number
+    """
+
+    return (3 * n**2 - n) // 2
