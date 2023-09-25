@@ -2031,3 +2031,14 @@ def get_hexagonal_num(n):
     """
 
     return (2 * n * (2 * n - 1)) // 2
+
+
+def is_pentagonal(number):
+    """
+    Function checks if number is pentagonal
+
+    :param number: int: number to check
+    :return: bool: True if number is pentagonal   
+    """
+
+    return ((sqrt(24 * number + 1) + 1) / 6).is_integer()
