@@ -2053,3 +2053,27 @@ def get_pentagonal_num(n):
     """
 
     return (3 * n**2 - n) // 2
+
+
+def sieve_of_eratosthenes(limit):
+    """
+    Function returns prime numbers under limit
+
+    :param limit: int: limit of primes
+    :return: list: list of primes
+    """
+
+    check_list = [True for _ in range(limit)]
+    check_list[0], check_list[1] = False, False
+
+    for i in range(2, int(limit**0.5) + 1):
+        if check_list[i]:
+            n = 0
+            while i**2 + n * i < limit:
+                check_list[i**2 + n * i] = False
+                n += 1
+
+    return [i for i in range(limit) if check_list[i]]
+
+
+print(sieve_of_eratosthenes(30))
