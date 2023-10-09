@@ -2074,6 +2074,26 @@ def sieve_of_eratosthenes(limit):
                 n += 1
 
     return [i for i in range(limit) if check_list[i]]
+    
+
+def convert_to_base10(number, base):
+    """
+    Function changes number given in base to number in base 10
+
+    :param number: int: number to convert
+    :base int: base of given number
+    """
+
+    hexa_symbols = {char: number for char, number in zip(ascii_lowercase, range(10, 16))}
+    
+    result = 0
+    for power, digit in zip(range(len(str(number)) - 1, -1, -1), str(number)):
+        if not digit.isnumeric():
+            result += int(hexa_symbols[digit])*base**power
+        else:
+            result += int(digit)*base**power
+
+    return result
 
 
-print(sieve_of_eratosthenes(30))
+print(convert_to_base10(1100100011, 2))
