@@ -1152,7 +1152,7 @@ def prime_factorization(number):
     return prime_factors
 
 
-def my_bin(number):
+def my_bin1(number):
     """
     Function coverts base 10 integer to base 2 integer
 
@@ -2096,4 +2096,10 @@ def convert_to_base10(number, base):
     return result
 
 
-print(convert_to_base10(1100100011, 2))
+def my_bin2(number):
+    digits = []
+    while number > 0:
+        rest = number % 2
+        number //= 2
+        digits.insert(0, str(rest))
+    return f'0b{"".join(digits)}'
