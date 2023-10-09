@@ -2096,7 +2096,14 @@ def convert_to_base10(number, base):
     return result
 
 
-def my_bin2(number):
+def my_bin2(number): 
+    """
+    Function converts number in base 10 to base 2
+
+    :param number: int: number to convert
+    :return: str: string representing converted number
+    """
+    
     digits = []
     while number > 0:
         rest = number % 2
