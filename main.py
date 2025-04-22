@@ -2110,3 +2110,31 @@ def my_bin2(number):
         number //= 2
         digits.insert(0, str(rest))
     return f'0b{"".join(digits)}'
+
+
+def binary_search(array: list[int], start: int, stop: int, number: int) -> int:
+    """
+    Function returns index of searching number in array, returns -1 if number is not present
+
+    :param array: list: list of numbers
+    :param start: int: start index of searching number
+    :param stop: int: stop index of searching number
+    :param number: int: number to search
+    """
+
+    if stop >= start:
+        mid_index = start + (stop - start) // 2
+
+        if array[mid_index] == number:
+            return mid_index
+
+        if number < array[mid_index]:
+            return binary_search(array, start, mid_index - 1, number)
+
+        if number > array[mid_index]:
+            return binary_search(array, mid_index + 1, stop, number)
+    else:
+        return -1
+
+arr1 = [1, 2, 2, 3, 4, 4, 5, 6, 7, 10, 20, 21, 37]
+print(binary_search(arr1, 0, len(arr1) - 1, 5))
